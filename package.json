@@ -1,7 +1,8 @@
 {
   "name": "@welift/liftui-mobile",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "dist/module/index.js",
+  "module": "dist/module/index.js",
   "scripts": {
     "android": "expo run:android",
     "ios": "expo run:ios",
@@ -9,7 +10,8 @@
     "start:ios": "react-native run-ios",
     "start:android": "react-native run-android",
     "co:login": "aws codeartifact login --tool npm --repository LiftUI --domain welift --domain-owner 592473490836",
-    "prepare": "yarn co:login"
+    "prepare": "yarn co:login",
+    "build:bob": "bob build"
   },
   "dependencies": {
     "expo": "~43.0.2",
@@ -29,6 +31,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@react-native-community/bob": "^0.17.1",
     "@storybook/addon-actions": "^5.3",
     "@storybook/addon-knobs": "^5.3",
     "@storybook/addon-links": "^5.3",
@@ -36,6 +39,13 @@
     "@storybook/addon-ondevice-knobs": "^5.3.25",
     "@storybook/react-native": "^5.3.25",
     "babel-loader": "^8.2.3"
+  },
+  "@react-native-community/bob": {
+    "source": "storybook/stories/components",
+    "output": "dist",
+    "targets": [
+      "module"
+    ]
   },
   "private": true
 }
