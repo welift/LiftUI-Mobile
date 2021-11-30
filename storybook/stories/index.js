@@ -1,2 +1,2 @@
-import './Button/Button.stories';
-import './Welcome/Welcome.stories';
+export * from './Button.stories';
+export * from './Welcome.stories';

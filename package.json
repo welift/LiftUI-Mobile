@@ -1,17 +1,22 @@
 {
+  "name": "@welift/liftui-mobile",
+  "version": "0.0.1",
   "main": "index.js",
   "scripts": {
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
     "start:ios": "react-native run-ios",
-    "start:android": "react-native run-android"
+    "start:android": "react-native run-android",
+    "co:login": "aws codeartifact login --tool npm --repository LiftUI --domain welift --domain-owner 592473490836",
+    "prepare": "yarn co:login"
   },
   "dependencies": {
     "expo": "~43.0.2",
     "expo-splash-screen": "~0.13.5",
     "expo-status-bar": "~1.1.0",
     "expo-updates": "~0.10.13",
+    "postcss": "^8.4.4",
     "prop-types": "^15.7.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
