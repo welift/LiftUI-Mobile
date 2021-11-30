@@ -31,13 +31,13 @@ const Button = ({
         onClick={onClick}
         loading={loading}
         data-loading={loading}
-        // data-has-icon={!!icons?.[iconName]}
+      // data-has-icon={!!icons?.[iconName]}
       >
-        <View className='children'>
-            <Text className='text'>{children}</Text>
-            {/* {loading && <Spinner />}
+        <View>
+          <Text>{children}</Text>
+          {/* {loading && <Spinner />}
             {(!loading && iconName) && <Icon name={iconName} />} */}
-          </View>
+        </View>
       </TouchableHighlight>
     </View>
   )
@@ -51,5 +51,9 @@ Button.defaultProps = {
   loading: null,
   iconName: null
 }
+
+const buttonStyle = () => css`
+  backgroundColor: blue;
+`
 
 export default Button
