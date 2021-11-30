@@ -5,3 +5,11 @@ android/**
 ios
 ios/**
 babel.config.js
+storybook
+storybook/**
+__tests__/**
+App.js
+app.json
+.buckconfig
+.gitattributes
+yarn-error.log

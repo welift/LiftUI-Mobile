@@ -4,9 +4,6 @@
   "main": "dist/module/index.js",
   "module": "dist/module/index.js",
   "scripts": {
-    "android": "expo run:android",
-    "ios": "expo run:ios",
-    "web": "expo start --web",
     "start:ios": "react-native run-ios",
     "start:android": "react-native run-android",
     "co:login": "aws codeartifact login --tool npm --repository LiftUI --domain welift --domain-owner 592473490836",
@@ -46,6 +43,5 @@
     "targets": [
       "module"
     ]
-  },
-  "private": true
+  }
 }
