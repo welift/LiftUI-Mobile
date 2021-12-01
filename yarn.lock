@@ -1020,7 +1020,7 @@
     pirates "^4.0.0"
     source-map-support "^0.5.16"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.14.0", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.14.0", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
   version "7.16.3"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@babel/runtime/-/runtime-7.16.3.tgz#b86f0db02a04187a3c17caa77de69840165d42d5"
   integrity sha512-WBwekcqacdY2e9AF/Q7WLFUWmdJGJTkbjqTjoMDgXkVZ3ZRUvOPsLb5KdwISoQVsbP+DQzVZW4Zhci0DvpbNTQ==
@@ -1084,7 +1084,7 @@
     "@emotion/utils" "0.11.3"
     "@emotion/weak-memoize" "0.2.5"
 
-"@emotion/core@^10.0.20", "@emotion/core@^10.0.9", "@emotion/core@^10.1.1":
+"@emotion/core@^10.0.20", "@emotion/core@^10.0.9":
   version "10.3.0"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@emotion/core/-/core-10.3.0.tgz#d027fce912e2f8e03eb61cb67e52df964e52950f"
   integrity sha512-C4+RI1gNycUbfg2Zojt3lcVQVWocMLK4jiwl5tO/Z5I3zyGmG+oKJl6+/uPtQeUDPN7WXHN8TQ7bqc+dnljZ0w==
@@ -1110,7 +1110,7 @@
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@emotion/hash/-/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
   integrity sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==
 
-"@emotion/is-prop-valid@0.8.8", "@emotion/is-prop-valid@^0.8.6":
+"@emotion/is-prop-valid@0.8.8":
   version "0.8.8"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
   integrity sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==
@@ -1162,7 +1162,7 @@
     "@emotion/serialize" "^0.11.15"
     "@emotion/utils" "0.11.3"
 
-"@emotion/styled@^10.0.17", "@emotion/styled@^10.0.27":
+"@emotion/styled@^10.0.17":
   version "10.3.0"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@emotion/styled/-/styled-10.3.0.tgz#8ee959bf75730789abb5f67f7c3ded0c30aec876"
   integrity sha512-GgcUpXBBEU5ido+/p/mCT2/Xx+Oqmp9JzQRuC+a4lYM4i4LBBn/dWvc0rQ19N9ObA8/T4NWMrPNe79kMBDJqoQ==
@@ -1749,7 +1749,7 @@
     react-native-modal-selector "^2.0.2"
     tinycolor2 "^1.4.1"
 
-"@storybook/addons@5.3.21":
+"@storybook/addons@5.3.21", "@storybook/addons@^5.3":
   version "5.3.21"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@storybook/addons/-/addons-5.3.21.tgz#ee312c738c33e8c34dc11777ef93522c3c36e56a"
   integrity sha512-Ji/21WADTLVbTbiKcZ64BcL0Es+h1Afxx3kNmGJqPSTUYroCwIFCT9mUzCqU6G+YyWaISAmTii5UJkTwMkChwA==
@@ -1761,23 +1761,6 @@
     core-js "^3.0.1"
     global "^4.3.2"
     util-deprecate "^1.0.2"
-
-"@storybook/addons@^5.3.25":
-  version "6.4.3"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@storybook/addons/-/addons-6.4.3.tgz#f34cb04289806f3d22be8a39c67fcd1dbdcbe137"
-  integrity sha512-LiS8NNZXpietvWw+A+jTVtVpVRARc2vq9R7KWAj07oFF91KD+U4PISAYbNMUVitej05CJJqT0jdtiW8G5pAr1g==
-  dependencies:
-    "@storybook/api" "6.4.3"
-    "@storybook/channels" "6.4.3"
-    "@storybook/client-logger" "6.4.3"
-    "@storybook/core-events" "6.4.3"
-    "@storybook/csf" "0.0.2--canary.87bc651.0"
-    "@storybook/router" "6.4.3"
-    "@storybook/theming" "6.4.3"
-    "@types/webpack-env" "^1.16.0"
-    core-js "^3.8.2"
-    global "^4.4.0"
-    regenerator-runtime "^0.13.7"
 
 "@storybook/api@5.3.21":
   version "5.3.21"
@@ -1803,29 +1786,6 @@
     shallow-equal "^1.1.0"
     store2 "^2.7.1"
     telejson "^3.2.0"
-    util-deprecate "^1.0.2"
-
-"@storybook/api@6.4.3":
-  version "6.4.3"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@storybook/api/-/api-6.4.3.tgz#ae30c75be8559cb6b54195989b50a7e3ccf4cb23"
-  integrity sha512-aWD7wPhj+HF2XBmH6b7hgRJPFldDXzhYbtPqsq6ukCrGlJder8NsnL6wHzXlQWgxudw8u3oqM+Q9kLwNiz4yXg==
-  dependencies:
-    "@storybook/channels" "6.4.3"
-    "@storybook/client-logger" "6.4.3"
-    "@storybook/core-events" "6.4.3"
-    "@storybook/csf" "0.0.2--canary.87bc651.0"
-    "@storybook/router" "6.4.3"
-    "@storybook/semver" "^7.3.2"
-    "@storybook/theming" "6.4.3"
-    core-js "^3.8.2"
-    fast-deep-equal "^3.1.3"
-    global "^4.4.0"
-    lodash "^4.17.20"
-    memoizerific "^1.11.3"
-    regenerator-runtime "^0.13.7"
-    store2 "^2.12.0"
-    telejson "^5.3.2"
-    ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
 "@storybook/channel-postmessage@5.3.21":
@@ -1856,15 +1816,6 @@
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/channels@6.4.3":
-  version "6.4.3"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@storybook/channels/-/channels-6.4.3.tgz#e70668d3dea06fcadf274c867a3430e3a5350787"
-  integrity sha512-E9JGZ53ITybokm7CEYARQjwdF/yDTu/R0tEo0MldPrNumb8yDjb4vxokBpvwbOMZ/n+QSU1BUIISm5bYt3owlQ==
-  dependencies:
-    core-js "^3.8.2"
-    ts-dedent "^2.0.0"
-    util-deprecate "^1.0.2"
-
 "@storybook/client-api@5.3.21":
   version "5.3.21"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@storybook/client-api/-/client-api-5.3.21.tgz#5b218a28f24219c32ab4b92a6af2a3e452fb8089"
@@ -1894,14 +1845,6 @@
   integrity sha512-OzQkwpZ5SK9cXD9Mv6lxPGPot+hSZvnkEW12kpt1AHfJz4ET26YTDOI3oetPsjfRJo6qYLeQX8+wF7rklfXbzA==
   dependencies:
     core-js "^3.0.1"
-
-"@storybook/client-logger@6.4.3":
-  version "6.4.3"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@storybook/client-logger/-/client-logger-6.4.3.tgz#1db1eab500f85c095239d581769c8e04e84994fe"
-  integrity sha512-/KmfJlihg2ldm9ml2sNIPOCdSIgF+TsRCET5W8vmwRUu/QUcs6mJMKlEWmmmlyATBp5DKQR+fABe2DccGuOWEQ==
-  dependencies:
-    core-js "^3.8.2"
-    global "^4.4.0"
 
 "@storybook/components@5.3.21":
   version "5.3.21"
@@ -1937,24 +1880,10 @@
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/core-events@6.4.3":
-  version "6.4.3"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@storybook/core-events/-/core-events-6.4.3.tgz#5fb3281a7cacba7fbf0d51a7a782cf751b27f6d7"
-  integrity sha512-UnXDO57U0jJYxXT4hVYQ7ze2wnCp3jrkRSyUPmMcyqpuLAWFhj+QYyna/7+geNID80MbVkkNLE+AEeSY+PPglQ==
-  dependencies:
-    core-js "^3.8.2"
-
 "@storybook/csf@0.0.1":
   version "0.0.1"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@storybook/csf/-/csf-0.0.1.tgz#95901507dc02f0bc6f9ac8ee1983e2fc5bb98ce6"
   integrity sha512-USTLkZze5gkel8MYCujSRBVIrUQ3YPBrLOx7GNk/0wttvVtlzWXAq9eLbQ4p/NicGxP+3T7KPEMVV//g+yubpw==
-  dependencies:
-    lodash "^4.17.15"
-
-"@storybook/csf@0.0.2--canary.87bc651.0":
-  version "0.0.2--canary.87bc651.0"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@storybook/csf/-/csf-0.0.2--canary.87bc651.0.tgz#c7b99b3a344117ef67b10137b6477a3d2750cf44"
-  integrity sha512-ajk1Uxa+rBpFQHKrCcTmJyQBXZ5slfwHVEaKlkuFaW77it8RgbPJp/ccna3sgoi8oZ7FkkOyvv1Ve4SmwFqRqw==
   dependencies:
     lodash "^4.17.15"
 
@@ -1989,31 +1918,6 @@
     qs "^6.6.0"
     util-deprecate "^1.0.2"
 
-"@storybook/router@6.4.3":
-  version "6.4.3"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@storybook/router/-/router-6.4.3.tgz#3682793a14b8bb75105184450117e4df3505b820"
-  integrity sha512-13Xs9KK9vvnil7HPF8esuvwrpdb/DDn6SzMgEFJxKYVgJy6ASAu/rzFweezCZntT58F8kEqEn1sHMOjw4gN7hw==
-  dependencies:
-    "@storybook/client-logger" "6.4.3"
-    core-js "^3.8.2"
-    fast-deep-equal "^3.1.3"
-    global "^4.4.0"
-    history "5.0.0"
-    lodash "^4.17.20"
-    memoizerific "^1.11.3"
-    qs "^6.10.0"
-    react-router "^6.0.0"
-    react-router-dom "^6.0.0"
-    ts-dedent "^2.0.0"
-
-"@storybook/semver@^7.3.2":
-  version "7.3.2"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@storybook/semver/-/semver-7.3.2.tgz#f3b9c44a1c9a0b933c04e66d0048fcf2fa10dac0"
-  integrity sha512-SWeszlsiPsMI0Ps0jVNtH64cI5c0UF3f7KgjVKJoNP30crQ6wUSddY2hsdeczZXEKVJGEn50Q60flcGsQGIcrg==
-  dependencies:
-    core-js "^3.6.5"
-    find-up "^4.1.0"
-
 "@storybook/theming@5.3.21":
   version "5.3.21"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@storybook/theming/-/theming-5.3.21.tgz#ae2dc101aa57c3be4df1724ae729e11bad118e0b"
@@ -2031,24 +1935,6 @@
     prop-types "^15.7.2"
     resolve-from "^5.0.0"
     ts-dedent "^1.1.0"
-
-"@storybook/theming@6.4.3":
-  version "6.4.3"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@storybook/theming/-/theming-6.4.3.tgz#97db57dde4cb1dfa1cc07181b8b1ece3557696ea"
-  integrity sha512-kXoDN8H6jfHLBawYB65E11yU7iRzej1HRG33CpY6ViPllV0IfIesUWXbrVQyJmTB2IQaoJpzwJN0Bt2KPaTOhw==
-  dependencies:
-    "@emotion/core" "^10.1.1"
-    "@emotion/is-prop-valid" "^0.8.6"
-    "@emotion/styled" "^10.0.27"
-    "@storybook/client-logger" "6.4.3"
-    core-js "^3.8.2"
-    deep-object-diff "^1.1.0"
-    emotion-theming "^10.0.27"
-    global "^4.4.0"
-    memoizerific "^1.11.3"
-    polished "^4.0.5"
-    resolve-from "^5.0.0"
-    ts-dedent "^2.0.0"
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
@@ -2257,7 +2143,7 @@
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
 
-"@types/webpack-env@^1.15.0", "@types/webpack-env@^1.16.0":
+"@types/webpack-env@^1.15.0":
   version "1.16.3"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/@types/webpack-env/-/webpack-env-1.16.3.tgz#b776327a73e561b71e7881d0cd6d34a1424db86a"
   integrity sha512-9gtOPPkfyNoEqCQgx4qJKkuNm/x0R2hKR7fdl7zvTJyHnIisuE/LfvXOsYWL0o3qq6uiBnKZNNNzi3l0y/X+xw==
@@ -3167,7 +3053,7 @@ core-js@^1.0.0:
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
   integrity sha1-ZSKUwUZR2yj6k70tX/KYOk8IxjY=
 
-core-js@^3.0.1, core-js@^3.6.5, core-js@^3.8.2:
+core-js@^3.0.1:
   version "3.19.2"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/core-js/-/core-js-3.19.2.tgz#ae216d7f4f7e924d9a2e3ff1e4b1940220f9157b"
   integrity sha512-ciYCResnLIATSsXuXnIOH4CbdfgV+H1Ltg16hJFN7/v6OxqnFr/IFGeLacaZ+fHLAm0TBbXwNK9/DNBzBUrO/g==
@@ -3553,7 +3439,7 @@ emojis-list@^3.0.0:
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/emojis-list/-/emojis-list-3.0.0.tgz#5570662046ad29e2e916e71aae260abdff4f6a78"
   integrity sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==
 
-emotion-theming@^10.0.19, emotion-theming@^10.0.27:
+emotion-theming@^10.0.19:
   version "10.3.0"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/emotion-theming/-/emotion-theming-10.3.0.tgz#7f84d7099581d7ffe808aab5cd870e30843db72a"
   integrity sha512-mXiD2Oj7N9b6+h/dC6oLf9hwxbtKHQjoIqtodEyL8CpkN4F3V4IK/BT4D0C7zSs4BBFOu4UlPJbvvBLa88SGEA==
@@ -3919,7 +3805,7 @@ fast-deep-equal@^2.0.1:
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"
   integrity sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk=
 
-fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
+fast-deep-equal@^3.1.1:
   version "3.1.3"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
   integrity sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
@@ -4456,20 +4342,6 @@ highlight.js@~9.18.2:
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/highlight.js/-/highlight.js-9.18.5.tgz#d18a359867f378c138d6819edfc2a8acd5f29825"
   integrity sha512-a5bFyofd/BHCX52/8i8uJkjr9DYwXIPnM/plwI6W7ezItLGqzt7X2G2nXuYSfsIJdkwwj/g9DG1LkcGJI/dDoA==
 
-history@5.0.0:
-  version "5.0.0"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/history/-/history-5.0.0.tgz#0cabbb6c4bbf835addb874f8259f6d25101efd08"
-  integrity sha512-3NyRMKIiFSJmIPdq7FxkNMJkQ7ZEtVblOQ38VtKaA0zZMW1Eo6Q6W8oDKEflr1kNNTItSnk4JMCO1deeSgbLLg==
-  dependencies:
-    "@babel/runtime" "^7.7.6"
-
-history@^5.1.0:
-  version "5.1.0"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/history/-/history-5.1.0.tgz#2e93c09c064194d38d52ed62afd0afc9d9b01ece"
-  integrity sha512-zPuQgPacm2vH2xdORvGGz1wQMuHSIB56yNAy5FnLuwOwgSYyPKptJtcMm6Ev+hRGeS+GzhbmRacHzvlESbFwDg==
-  dependencies:
-    "@babel/runtime" "^7.7.6"
-
 hoist-non-react-statics@^3.3.0:
   version "3.3.2"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
@@ -4768,7 +4640,7 @@ is-fullwidth-code-point@^3.0.0:
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz#f116f8064fe90b3f7844a38997c0b75051269f1d"
   integrity sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==
 
-is-function@^1.0.1, is-function@^1.0.2:
+is-function@^1.0.1:
   version "1.0.2"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/is-function/-/is-function-1.0.2.tgz#4f097f30abf6efadac9833b17ca5dc03f8144e08"
   integrity sha512-lw7DUp0aWXYg+CBCN+JKkcE0Q2RayZnSvnZBlwgxHBQhqt5pZNVy4Ri7H9GmmXkdu7LUthszM+Tor1u/2iBcpQ==
@@ -4852,7 +4724,7 @@ is-plain-object@^3.0.0:
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/is-plain-object/-/is-plain-object-3.0.1.tgz#662d92d24c0aa4302407b0d45d21f2251c85f85b"
   integrity sha512-Xnpx182SBMrr/aBik8y+GuR4U1L9FqMSojwDQwPMmxyC6bvEqly9UBCxhauBF5vNh2gwWJNX6oDV7O+OM4z34g==
 
-is-regex@^1.0.4, is-regex@^1.1.2, is-regex@^1.1.4:
+is-regex@^1.0.4, is-regex@^1.1.4:
   version "1.1.4"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/is-regex/-/is-regex-1.1.4.tgz#eef5663cd59fa4c0ae339505323df6854bb15958"
   integrity sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==
@@ -5349,7 +5221,7 @@ lodash.throttle@^4.1.1:
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
   integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
 
-lodash@^4.0.1, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.21:
+lodash@^4.0.1, lodash@^4.17.14, lodash@^4.17.15:
   version "4.17.21"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -6539,13 +6411,6 @@ polished@^3.3.1:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-polished@^4.0.5:
-  version "4.1.3"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/polished/-/polished-4.1.3.tgz#7a3abf2972364e7d97770b827eec9a9e64002cfc"
-  integrity sha512-ocPAcVBUOryJEKe0z2KLd1l9EBa1r5mSwlKpExmrLzsnIzJo4axsoU9O2BjOTkDGDT4mZ0WFE5XKTlR3nLnZOA==
-  dependencies:
-    "@babel/runtime" "^7.14.0"
-
 popper.js@^1.14.4, popper.js@^1.14.7:
   version "1.16.1"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
@@ -6663,7 +6528,7 @@ q@^1.1.2:
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
 
-qs@^6.10.0, qs@^6.6.0:
+qs@^6.6.0:
   version "6.10.1"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/qs/-/qs-6.10.1.tgz#4931482fa8d647a5aab799c5271d2133b981fb6a"
   integrity sha512-M528Hph6wsSVOBiYUnGf+K/7w0hNshs/duGsNXPUCLH5XAqjEtiPGwNONLV0tBH8NoGb0mvD5JubnUTrujKDTg==
@@ -6963,21 +6828,6 @@ react-refresh@^0.4.0:
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/react-refresh/-/react-refresh-0.4.3.tgz#966f1750c191672e76e16c2efa569150cc73ab53"
   integrity sha512-Hwln1VNuGl/6bVwnd0Xdn1e84gT/8T9aYNL+HAKDArLCS7LWjwr7StE30IEYbIkx0Vi3vs+coQxe+SQDbGbbpA==
 
-react-router-dom@^6.0.0:
-  version "6.0.2"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/react-router-dom/-/react-router-dom-6.0.2.tgz#860cefa697b9d4965eced3f91e82cdbc5995f3ad"
-  integrity sha512-cOpJ4B6raFutr0EG8O/M2fEoyQmwvZWomf1c6W2YXBZuFBx8oTk/zqjXghwScyhfrtnt0lANXV2182NQblRxFA==
-  dependencies:
-    history "^5.1.0"
-    react-router "6.0.2"
-
-react-router@6.0.2, react-router@^6.0.0:
-  version "6.0.2"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/react-router/-/react-router-6.0.2.tgz#bd2b0fa84fd1d152671e9f654d9c0b1f5a7c86da"
-  integrity sha512-8/Wm3Ed8t7TuedXjAvV39+c8j0vwrI5qVsYqjFr5WkJjsJpEvNSoLRUbtqSEYzqaTUj1IV+sbPJxvO+accvU0Q==
-  dependencies:
-    history "^5.1.0"
-
 react-select@^3.0.8:
   version "3.2.0"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/react-select/-/react-select-3.2.0.tgz#de9284700196f5f9b5277c5d850a9ce85f5c72fe"
@@ -7096,7 +6946,7 @@ regenerate@^1.4.2:
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/regenerate/-/regenerate-1.4.2.tgz#b9346d8827e8f5a32f7ba29637d398b69014848a"
   integrity sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==
 
-regenerator-runtime@^0.13.2, regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.7:
+regenerator-runtime@^0.13.2, regenerator-runtime@^0.13.4:
   version "0.13.9"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
   integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==
@@ -7707,7 +7557,7 @@ static-extend@^0.1.1:
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
 
-store2@^2.12.0, store2@^2.7.1:
+store2@^2.7.1:
   version "2.12.0"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/store2/-/store2-2.12.0.tgz#e1f1b7e1a59b6083b2596a8d067f6ee88fd4d3cf"
   integrity sha512-7t+/wpKLanLzSnQPX8WAcuLCCeuSHoWdQuh9SB3xD0kNOM38DNf+0Oa+wmvxmYueRzkmh6IcdKFtvTa+ecgPDw==
@@ -7847,20 +7697,6 @@ telejson@^3.2.0:
     lodash "^4.17.15"
     memoizerific "^1.11.3"
 
-telejson@^5.3.2:
-  version "5.3.3"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/telejson/-/telejson-5.3.3.tgz#fa8ca84543e336576d8734123876a9f02bf41d2e"
-  integrity sha512-PjqkJZpzEggA9TBpVtJi1LVptP7tYtXB6rEubwlHap76AMjzvOdKX41CxyaW7ahhzDU1aftXnMCx5kAPDZTQBA==
-  dependencies:
-    "@types/is-function" "^1.0.0"
-    global "^4.4.0"
-    is-function "^1.0.2"
-    is-regex "^1.1.2"
-    is-symbol "^1.0.3"
-    isobject "^4.0.0"
-    lodash "^4.17.21"
-    memoizerific "^1.11.3"
-
 temp-dir@^1.0.0:
   version "1.0.0"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/temp-dir/-/temp-dir-1.0.0.tgz#0a7c0ea26d3a39afa7e0ebea9c1fc0bc4daa011d"
@@ -7993,11 +7829,6 @@ ts-dedent@^1.1.0:
   version "1.2.0"
   resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/ts-dedent/-/ts-dedent-1.2.0.tgz#6aa2229d837159bb6d635b6b233002423b91e0b0"
   integrity sha512-6zSJp23uQI+Txyz5LlXMXAHpUhY4Hi0oluXny0OgIR7g/Cromq4vDBnhtbBdyIV34g0pgwxUvnvg+jLJe4c1NA==
-
-ts-dedent@^2.0.0:
-  version "2.2.0"
-  resolved "https://welift-592473490836.d.codeartifact.us-east-1.amazonaws.com:443/npm/LiftUI/ts-dedent/-/ts-dedent-2.2.0.tgz#39e4bd297cd036292ae2394eb3412be63f563bb5"
-  integrity sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==
 
 ts-interface-checker@^0.1.9:
   version "0.1.13"
