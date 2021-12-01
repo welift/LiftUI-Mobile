@@ -30,7 +30,7 @@ const Checkbox = ({
           {
             (isChecked) ? (
               <View style={styles.selected}>
-                <Check />
+                <Check fill='#FFFFFF' width={10} height={7} />
               </View>
             ) : (
               <View />
