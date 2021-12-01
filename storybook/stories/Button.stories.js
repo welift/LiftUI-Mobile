@@ -2,26 +2,63 @@ import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import Button from './components/Button';
 import CenterView from './components/CenterView';
 
 storiesOf('Button', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
-  .add('with text', () => (
-    <Button onPress={action('clicked-text')}>
-      Label
-    </Button>
+  .add('Default', () => (
+    <View>
+      <Button onPress={action('clicked-text')}>
+        Label
+      </Button>
+      <Button onPress={action('clicked-text')} buttonType='secondaryDefault'>
+        Label
+      </Button>
+    </View>
   ))
-  .add('Secondary', () => (
-    <Button onPress={action('clicked-text')} buttonType='secondaryDefault'>
-      Label
-    </Button>
+  .add('Outline', () => (
+    <View>
+      <Button onPress={action('clicked-text')} buttonType='primaryOutline'>
+        Label
+      </Button>
+      <Button onPress={action('clicked-text')} buttonType='secondaryOutline'>
+        Label
+      </Button>
+    </View>
+  ))
+  .add('Text', () => (
+    <View>
+      <Button onPress={action('clicked-text')} buttonType='primaryText'>
+        Label
+      </Button>
+      <Button onPress={action('clicked-text')} buttonType='secondaryText'>
+        Label
+      </Button>
+    </View>
   ))
   .add('Disabled', () => (
-    <Button onPress={action('clicked-text')} disabled>
+    <View>
+      <Button onPress={action('clicked-text')} disabled>
       Label
     </Button>
+    <Button onPress={action('clicked-text')} disabled buttonType='secondaryDefault'>
+      Label
+    </Button>
+    <Button onPress={action('clicked-text')} disabled buttonType='primaryOutline'>
+      Label
+    </Button>
+    <Button onPress={action('clicked-text')} disabled buttonType='secondaryOutline'>
+      Label
+    </Button>
+    <Button onPress={action('clicked-text')} disabled buttonType='primaryText'>
+        Label
+      </Button>
+      <Button onPress={action('clicked-text')} disabled buttonType='secondaryText'>
+        Label
+      </Button>
+    </View>
   ))
   .add('with some emoji', () => (
     <Button onPress={action('clicked-emoji')}>

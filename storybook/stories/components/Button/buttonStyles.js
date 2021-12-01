@@ -2,20 +2,33 @@ import { StyleSheet } from "react-native"
 
 import colors from '@theme/color'
 
-console.log(colors)
-
 const defaultArea = { 
-  minWidth: 93,
+  minWidth: 64,
   height: 32,
   borderRadius: 40,
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  marginTop: 32,
+  marginBottom: 32
 }
 
 const buttonFont = {
   fontSize: 16,
   lineHeight: 16,
   fontWeight: '700'
+}
+
+const defaultText = {
+  ...buttonFont,
+  alignItems: 'center',
+  justifyContent: 'center',
+  paddingTop: 2,
+  color: colors.neutral
+}
+
+const defaultContent = {
+  marginStart: 24,
+  marginEnd: 24
 }
 
 
@@ -26,9 +39,18 @@ export const buttonStyles = (buttonType) => {
   if(buttonType === 'secondaryDefault') {
     return secondaryDefault
   }
-  // if(buttonType === 'primaryOutline') {
-  //   return primaryOutline
-  // }
+  if(buttonType === 'primaryOutline') {
+    return primaryOutline
+  }
+  if(buttonType === 'secondaryOutline') {
+    return secondaryOutline
+  }
+  if(buttonType === 'primaryText') {
+    return primaryText
+  }
+  if(buttonType === 'secondaryText') {
+    return secondaryText
+  }
 }
 
 const primaryDefault = StyleSheet.create({
@@ -45,14 +67,16 @@ const primaryDefault = StyleSheet.create({
     backgroundColor: colors.primaryDull,
   },
   text: {
-    ...buttonFont,
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: colors.neutral,
-    paddingTop: 2,
+    ...defaultText,
+  },
+  activeText: {
+    ...defaultText,
+  },
+  disabledText: {
+    ...defaultText,
   },
   content: {
-    color: colors.neutral
+    ...defaultContent
   }
 })
 
@@ -60,7 +84,6 @@ const secondaryDefault = StyleSheet.create({
   area: {
     ...defaultArea,
     backgroundColor: colors.secondary,
-    borderStyle
   },
   areaActive: {
     ...defaultArea,
@@ -71,21 +94,61 @@ const secondaryDefault = StyleSheet.create({
     backgroundColor: colors.secondaryDull,
   },
   text: {
-    ...buttonFont,
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: colors.neutral,
-    paddingTop: 2,
+    ...defaultText
+  },
+  activeText: {
+    ...defaultText
+  },
+  disabledText: {
+    ...defaultText
   },
   content: {
-    color: colors.neutral
+    ...defaultContent
   }
 })
 
-const secondaryDefault = StyleSheet.create({
+const primaryOutline = StyleSheet.create({
   area: {
     ...defaultArea,
     backgroundColor: colors.neutral,
+    borderColor: colors.primary,
+    borderStyle: 'solid',
+    borderWidth: 1,
+  },
+  areaActive: {
+    ...defaultArea,
+    backgroundColor: colors.accent,
+  },
+  areaDisabled: {
+    ...defaultArea,
+    backgroundColor: colors.neutral,
+    borderColor: colors.primaryDull,
+    borderStyle: 'solid',
+    borderWidth: 1,
+  },
+  text: {
+    ...defaultText,
+    color: colors.primary
+  },
+  activeText: {
+    ...defaultText
+  },
+  disabledText: {
+    ...defaultText,
+    color: colors.primaryDull
+  },
+  content: {
+    ...defaultContent
+  }
+})
+
+const secondaryOutline = StyleSheet.create({
+  area: {
+    ...defaultArea,
+    backgroundColor: colors.neutral,
+    borderColor: colors.secondary,
+    borderStyle: 'solid',
+    borderWidth: 1,
   },
   areaActive: {
     ...defaultArea,
@@ -93,16 +156,77 @@ const secondaryDefault = StyleSheet.create({
   },
   areaDisabled: {
     ...defaultArea,
-    backgroundColor: colors.secondaryDull,
+    backgroundColor: colors.neutral,
+    borderColor: colors.secondaryDull,
+    borderStyle: 'solid',
+    borderWidth: 1,
   },
   text: {
-    ...buttonFont,
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: colors.neutral,
-    paddingTop: 2,
+    ...defaultText,
+    color: colors.secondary
+  },
+  activeText: {
+    ...defaultText
+  },
+  disabledText: {
+    ...defaultText,
+    color: colors.secondaryDull
   },
   content: {
-    color: colors.neutral
+    ...defaultContent
+  }
+})
+
+const primaryText = StyleSheet.create({
+  area: {
+    ...defaultArea,
+  },
+  areaActive: {
+    ...defaultArea,
+    backgroundColor: colors.accent,
+  },
+  areaDisabled: {
+    ...defaultArea,
+  },
+  text: {
+    ...defaultText,
+    color: colors.primary
+  },
+  activeText: {
+    ...defaultText
+  },
+  disabledText: {
+    ...defaultText,
+    color: colors.primaryDull
+  },
+  content: {
+    ...defaultContent
+  }
+})
+
+const secondaryText = StyleSheet.create({
+  area: {
+    ...defaultArea,
+  },
+  areaActive: {
+    ...defaultArea,
+    backgroundColor: colors.basic,
+  },
+  areaDisabled: {
+    ...defaultArea,
+  },
+  text: {
+    ...defaultText,
+    color: colors.secondary
+  },
+  activeText: {
+    ...defaultText
+  },
+  disabledText: {
+    ...defaultText,
+    color: colors.secondaryDull
+  },
+  content: {
+    ...defaultContent
   }
 })
