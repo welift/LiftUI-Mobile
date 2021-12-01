@@ -6,7 +6,7 @@
   "scripts": {
     "start:ios": "react-native run-ios",
     "start:android": "react-native run-android",
-    "link": "react-native link",
+    "rnlink": "react-native link",
     "co:login": "aws codeartifact login --tool npm --repository LiftUI --domain welift --domain-owner 592473490836",
     "prepare": "yarn co:login",
     "build:bob": "bob build"
