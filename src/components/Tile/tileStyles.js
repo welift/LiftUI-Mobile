@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     shadowColor: '#997659',
     width: (width ? width : 346),
-    height: (height ? height : 96),
+    minHeight: (height ? height : 96),
     shadowOpacity: .15,
     shadowRadius: 10,
     padding: (padding ? padding : 36)

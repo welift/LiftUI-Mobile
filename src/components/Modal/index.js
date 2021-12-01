@@ -1,35 +1,46 @@
 import React from "react";
 
-import { Modal as NativeModal, Text, View } from "react-native";
+import { Modal as NativeModal, Text, View, Pressable } from "react-native";
 
 import Tile from '../Tile'
 import Icon from "../Icon";
 
-import { styles } from './modalStyles'
-import { Button } from "..";
+import types from '@theme/type'
 
-const Modal = ({ animationType, visible, onClose }) => {
+import { styles } from './modalStyles'
+import Button from "../Button";
+
+const Modal = ({ 
+  visible, 
+  onClose,
+  title,
+  children,
+  onButtonPress,
+  buttonText,
+}) => {
   return (
     <View style={styles.centerView}>
       <NativeModal 
-        animationType='none'
-        transparent
+        animationType='fade'
+        transparent={false}
         visible={visible}
         onRequestClose={onClose}
       >
         <View style={styles.centerView}>
-        <Tile padding={20}>
-          <Icon name='closeX' width={16} height={16} />
-          <View style={styles.innerTile}>
-            <Text>title</Text>
-            <Text>Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum interdum nisi. </Text>
-            <Button>Button</Button>
-          </View>
+        <Tile padding={20} style={styles.tile}>
+          <Pressable><Icon name='closeX' width={16} height={16} /></Pressable>
+            <Text style={[types.headingThree, styles.title]}>{title}</Text>
+              {children}
+            <Button onPress={onButtonPress}>{buttonText}</Button>
         </Tile>
         </View>
       </NativeModal>
     </View>
   )
+}
+
+Modal.defaultProps = {
+  onButtonPress: () => {}
 }
 
 export default Modal
