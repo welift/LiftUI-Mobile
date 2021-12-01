@@ -6,7 +6,7 @@
   "scripts": {
     "start:ios": "react-native run-ios",
     "start:android": "react-native run-android",
-    "link": "react-native link",
+    "rnlink": "react-native link",
     "co:login": "aws codeartifact login --tool npm --repository LiftUI --domain welift --domain-owner 592473490836",
     "prepare": "yarn co:login",
     "build:bob": "bob build"
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@react-native-community/async-storage": "^1.12.1",
     "@react-native-community/bob": "^0.17.1",
     "@storybook/addon-actions": "^5.3",
     "@storybook/addon-knobs": "^5.3",

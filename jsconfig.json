@@ -4,6 +4,9 @@
     "paths": {
       "@theme/*": [
         "./storybook/stories/theme/*"
+      ],
+      "@icons/*": [
+        "./storybook/stories/icons/*"
       ]
     }
   },
