@@ -13,8 +13,8 @@
           ".js"
         ],
         "alias": {
-          "@theme": "./storybook/stories/theme",
-          "@icons": "./storybook/stories/icons"
+          "@theme": "./src/theme",
+          "@icons": "./src/icons"
         }
       }
     ]

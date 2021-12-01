@@ -3,10 +3,10 @@
     "baseUrl": ".",
     "paths": {
       "@theme/*": [
-        "./storybook/stories/theme/*"
+        "src/stories/theme/*"
       ],
       "@icons/*": [
-        "./storybook/stories/icons/*"
+        "src/stories/icons/*"
       ]
     }
   },

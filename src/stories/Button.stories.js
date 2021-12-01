@@ -3,8 +3,8 @@ import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import { Text, View } from 'react-native';
-import Button from './components/Button';
-import CenterView from './components/CenterView';
+import Button from '../components/Button';
+import CenterView from '../components/CenterView';
 
 storiesOf('Button', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
@@ -41,18 +41,18 @@ storiesOf('Button', module)
   .add('Disabled', () => (
     <View>
       <Button onPress={action('clicked-text')} disabled>
-      Label
-    </Button>
-    <Button onPress={action('clicked-text')} disabled buttonType='secondaryDefault'>
-      Label
-    </Button>
-    <Button onPress={action('clicked-text')} disabled buttonType='primaryOutline'>
-      Label
-    </Button>
-    <Button onPress={action('clicked-text')} disabled buttonType='secondaryOutline'>
-      Label
-    </Button>
-    <Button onPress={action('clicked-text')} disabled buttonType='primaryText'>
+        Label
+      </Button>
+      <Button onPress={action('clicked-text')} disabled buttonType='secondaryDefault'>
+        Label
+      </Button>
+      <Button onPress={action('clicked-text')} disabled buttonType='primaryOutline'>
+        Label
+      </Button>
+      <Button onPress={action('clicked-text')} disabled buttonType='secondaryOutline'>
+        Label
+      </Button>
+      <Button onPress={action('clicked-text')} disabled buttonType='primaryText'>
         Label
       </Button>
       <Button onPress={action('clicked-text')} disabled buttonType='secondaryText'>
