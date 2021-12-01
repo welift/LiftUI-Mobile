@@ -27,6 +27,12 @@ const Button = ({
 
   const style = buttonStyles(buttonType)
 
+  const handleTextStyle = pressed => {
+    if(pressed) return style.activeText
+    if(disabled) return style.disabledText
+    return style.text
+  }
+
   return (
     <Pressable
       style={({ pressed }) => {
@@ -43,12 +49,14 @@ const Button = ({
       loading={loading}
       data-loading={loading}
     // data-has-icon={!!icons?.[iconName]}
-    >
+    >{({ pressed }) => (
       <View style={style.content}>
-        <Text style={style.text}>{children}</Text>
+        <Text style={handleTextStyle(pressed)}>{children}</Text>
         {/* {loading && <Spinner />}
           {(!loading && iconName) && <Icon name={iconName} />} */}
       </View>
+    )}
+      
     </Pressable>
   )
 }
