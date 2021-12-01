@@ -6,5 +6,9 @@ import CenterView from './components/CenterView';
 storiesOf('Checkbox', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('is enabled', () => (
-    <Checkbox />
+    <Checkbox label='testLabel' />
+  ))
+
+  .add('is disabled', () => (
+    <Checkbox disabled />
   ));

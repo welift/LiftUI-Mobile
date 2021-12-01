@@ -51,7 +51,7 @@ Checkbox.defaultProps = {
   disabled: false,
 }
 
-Checkbox.PropTypes = {
+Checkbox.propTypes = {
   label: PropTypes.string,
   onChange: PropTypes.func,
   disabled: PropTypes.bool
