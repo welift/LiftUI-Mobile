@@ -1,29 +1,21 @@
 import React from 'react'
 
-// import {
-//   BUTTON_SIZE_SMALL,
-//   BUTTON_SIZE_LARGE
-// } from './constants'
-
-// import { buttonCss } from './buttonStyles'
 // import Spinner from '../Spinner'
 // import Icon from '../Icon'
 
 // import { icons } from '../../icons/icons'
-import { View, TouchableHighlight, Text, Pressable } from 'react-native'
+import { View, Text, Pressable } from 'react-native'
 import { buttonStyles } from './buttonStyles'
 
 const Button = ({
   size,
   disabled,
-  onClick,
+  onPress,
   children,
   loading,
   iconName,
   buttonType
 }) => {
-
-  // const buttonClassName = size === BUTTON_SIZE_SMALL ? 'small' : 'large'
 
   const style = buttonStyles(buttonType)
 
@@ -45,7 +37,7 @@ const Button = ({
       }}
       // className={`Button-${buttonClassName}`}
       disabled={disabled || loading}
-      onClick={onClick}
+      onPress={onPress}
       loading={loading}
       data-loading={loading}
     // data-has-icon={!!icons?.[iconName]}
@@ -65,7 +57,7 @@ const Button = ({
 Button.defaultProps = {
   // size: BUTTON_SIZE_LARGE,
   disabled: false,
-  onClick: () => { },
+  onPress: () => { },
   loading: null,
   iconName: null,
   buttonType: 'primaryDefault'
