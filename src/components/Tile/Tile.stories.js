@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
-import Tile from '../components/Tile';
-import CenterView from '../components/CenterView';
+import Tile from '.';
+import CenterView from '../CenterView';
 import { Text } from 'react-native';
 
 storiesOf('Tile', module)
