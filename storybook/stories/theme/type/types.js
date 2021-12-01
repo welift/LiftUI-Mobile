@@ -1,19 +1,15 @@
 const fonts = {
   regular: {
-    fontFamily: 'Inter',
+    fontFamily: 'Inter-Light',
     letterSpacing: .03,
-    fontWeight: '300'
   },
   medium: {
-    fontFamily: 'Inter',
+    fontFamily: 'Inter-Medium',
     letterSpacing: .03,
-    fontWeight: '400'
-
   },
   bold: {
-    fontFamily: 'Inter',
+    fontFamily: 'Inter-Bold',
     letterSpacing: .03,
-    fontWeight: '500'
   }
 }
 

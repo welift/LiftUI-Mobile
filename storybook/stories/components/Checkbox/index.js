@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, StyleSheet } from 'react-native';
-import { TouchableHighlight } from 'react-native-gesture-handler';
+import { View, Text } from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import Check from '../../icons/Check'
-import colors from '@theme/color';
-import types from '@theme/type'
+import { styles } from './checkboxStyles'
 
 const Checkbox = ({
   label,
@@ -13,15 +12,21 @@ const Checkbox = ({
 }) => {
   const [isChecked, setIsChecked] = useState(false)
 
+  const handleChange = (e) => {
+    setIsChecked(!isChecked)
+    onChange(e)
+  }
+
   const boxViewStyle = isChecked ? styles.boxViewChecked : styles.boxViewUnChecked
 
   return (
-    <TouchableHighlight
-      onPress={() => setIsChecked(!isChecked)}
+    <TouchableWithoutFeedback
+      onPress={handleChange}
       underlayColor='transparent'
+      disabled={disabled}
     >
       <View style={styles.outerContainer}>
-        <View style={boxViewStyle}>
+        <View style={boxViewStyle(disabled)}>
           {
             (isChecked) ? (
               <View style={styles.selected}>
@@ -33,50 +38,22 @@ const Checkbox = ({
           }
         </View>
         <Text style={styles.checkboxLabel}>
-          Test
+          {label}
         </Text>
       </View>
-    </TouchableHighlight>
+    </TouchableWithoutFeedback>
   )
 }
 
-const baseBoxView = {
-  width: 16,
-  height: 16,
-  borderRadius: 2,
-  borderWidth: 1,
-  marginRight: 16
+Checkbox.defaultProps = {
+  label: 'test',
+  onChange: () => { },
+  disabled: false,
 }
 
-const styles = StyleSheet.create({
-  boxViewChecked: {
-    ...baseBoxView,
-    backgroundColor: colors.primary,
-    borderColor: colors.primary
-  },
-  boxViewUnChecked: {
-    ...baseBoxView,
-    backgroundColor: 'transparent',
-    borderColor: colors.basicDull
-  },
-  checkChecked: {
-    color: colors.neutral
-  },
-  checkUnChecked: {
-    color: colors.basic
-  },
-  selected: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  outerContainer: {
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  checkboxLabel: {
-    ...types.smallBody
-  }
-})
-
+Checkbox.PropTypes = {
+  label: PropTypes.string,
+  onChange: PropTypes.func,
+  disabled: PropTypes.bool
+}
 export default Checkbox
