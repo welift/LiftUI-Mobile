@@ -38,7 +38,7 @@
     "@storybook/addon-links": "^5.3",
     "@storybook/addon-ondevice-actions": "^5.3.23",
     "@storybook/addon-ondevice-knobs": "^5.3.25",
-    "@storybook/addons": "^5.3.25",
+    "@storybook/addons": "^5.3",
     "@storybook/react-native": "^5.3.25",
     "babel-loader": "^8.2.3",
     "metro-react-native-babel-preset": "^0.66.2"
