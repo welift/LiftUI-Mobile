@@ -7,7 +7,7 @@ const border = {
   width: '100%',
 }
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   lineBreak: {
     ...border,
     backgroundColor: colors.secondaryLight,
