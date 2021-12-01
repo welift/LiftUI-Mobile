@@ -1,5 +1,5 @@
 import React from "react"
-import Svg, { G, Path, Defs } from "react-native-svg"
+import Svg, { G, Path, Defs, ClipPath } from "react-native-svg"
 import colors from '@theme/color'
 
 const Sad = (props) => {
@@ -20,9 +20,9 @@ const Sad = (props) => {
         />
       </G>
       <Defs>
-        <clipPath id="a">
+        <ClipPath id="a">
           <Path fill='#fff' d="M0 0h24v24H0z" />
-        </clipPath>
+        </ClipPath>
       </Defs>
     </Svg>
   )

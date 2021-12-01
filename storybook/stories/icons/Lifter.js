@@ -1,5 +1,5 @@
 import React from "react"
-import Svg, { Path } from "react-native-svg"
+import Svg, { Path, G, Defs, ClipPath } from "react-native-svg"
 import colors from '@theme/color'
 
 const Lifter = (props) => {
