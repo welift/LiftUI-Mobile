@@ -4,8 +4,8 @@ import colors from '@theme/color';
 import types from '@theme/type'
 
 const baseBoxView = {
-  width: 16,
-  height: 16,
+  width: 14,
+  height: 14,
   borderRadius: 2,
   borderWidth: 1,
   marginRight: 16
