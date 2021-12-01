@@ -29,7 +29,7 @@ import Truck from "./Truck";
 import UpArrow from "./UpArrow";
 import User from "./User";
 
-// When adding more icons use this website
+// When adding more icons from an svg use this website
 // to format the svg properly
 // https://react-svgr.com/playground/?native=true
 
