@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native"
 
 import colors from '@theme/color'
 
-const defaultArea = { 
+const defaultArea = {
   minWidth: 64,
   height: 32,
   borderRadius: 40,
@@ -33,22 +33,22 @@ const defaultContent = {
 
 
 export const buttonStyles = (buttonType) => {
-  if(buttonType === 'primaryDefault') {
+  if (buttonType === 'primaryDefault') {
     return primaryDefault
   }
-  if(buttonType === 'secondaryDefault') {
+  if (buttonType === 'secondaryDefault') {
     return secondaryDefault
   }
-  if(buttonType === 'primaryOutline') {
+  if (buttonType === 'primaryOutline') {
     return primaryOutline
   }
-  if(buttonType === 'secondaryOutline') {
+  if (buttonType === 'secondaryOutline') {
     return secondaryOutline
   }
-  if(buttonType === 'primaryText') {
+  if (buttonType === 'primaryText') {
     return primaryText
   }
-  if(buttonType === 'secondaryText') {
+  if (buttonType === 'secondaryText') {
     return secondaryText
   }
 }
