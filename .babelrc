@@ -1,15 +1,20 @@
 {
-  "presets": ["module:metro-react-native-babel-preset"],
+  "presets": [
+    "module:metro-react-native-babel-preset"
+  ],
   "plugins": [
     [
       "module-resolver",
       {
-        "root": ["./storybook"],
+        "root": [
+          "./storybook"
+        ],
         "extensions": [
           ".js"
         ],
         "alias": {
-          "@theme": "./storybook/stories/theme"
+          "@theme": "./storybook/stories/theme",
+          "@icons": "./storybook/stories/icons"
         }
       }
     ]
