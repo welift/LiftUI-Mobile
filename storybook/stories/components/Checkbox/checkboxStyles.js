@@ -12,20 +12,16 @@ const baseBoxView = {
 }
 
 export const styles = StyleSheet.create({
-  boxViewChecked: (disabled) => {
-    return {
-      ...baseBoxView,
-      backgroundColor: (disabled ? colors.primaryLight : colors.primary),
-      borderColor: (disabled ? colors.primaryLight : colors.primary)
-    }
-  },
-  boxViewUnChecked: (disabled) => {
-    return {
-      ...baseBoxView,
-      backgroundColor: 'transparent',
-      borderColor: (disabled ? colors.basicLight : colors.basicDull)
-    }
-  },
+  boxViewChecked: (disabled) => ({
+    ...baseBoxView,
+    backgroundColor: (disabled ? colors.primaryLight : colors.primary),
+    borderColor: (disabled ? colors.primaryLight : colors.primary)
+  }),
+  boxViewUnChecked: (disabled) => ({
+    ...baseBoxView,
+    backgroundColor: 'transparent',
+    borderColor: (disabled ? colors.basicLight : colors.basicDull)
+  }),
   checkChecked: {
     color: colors.neutral
   },
