@@ -10,7 +10,17 @@ storiesOf('Button', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('with text', () => (
     <Button onPress={action('clicked-text')}>
-      hi
+      Label
+    </Button>
+  ))
+  .add('Secondary', () => (
+    <Button onPress={action('clicked-text')} buttonType='secondaryDefault'>
+      Label
+    </Button>
+  ))
+  .add('Disabled', () => (
+    <Button onPress={action('clicked-text')} disabled>
+      Label
     </Button>
   ))
   .add('with some emoji', () => (

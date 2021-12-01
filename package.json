@@ -1,7 +1,7 @@
 {
   "name": "@welift/liftui-mobile",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "dist/module/index.js",
   "module": "dist/module/index.js",
   "scripts": {
     "start:ios": "react-native run-ios",
@@ -12,6 +12,7 @@
     "build:bob": "bob build"
   },
   "dependencies": {
+    "@storybook/addon-console": "^1.2.3",
     "expo": "~43.0.2",
     "expo-splash-screen": "~0.13.5",
     "expo-status-bar": "~1.1.0",
@@ -36,7 +37,8 @@
     "@storybook/addon-ondevice-actions": "^5.3.23",
     "@storybook/addon-ondevice-knobs": "^5.3.25",
     "@storybook/react-native": "^5.3.25",
-    "babel-loader": "^8.2.3"
+    "babel-loader": "^8.2.3",
+    "metro-react-native-babel-preset": "^0.66.2"
   },
   "@react-native-community/bob": {
     "source": "storybook/stories/components",

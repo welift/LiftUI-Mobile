@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@theme/*": ["./storybook/stories/theme/*"] 
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

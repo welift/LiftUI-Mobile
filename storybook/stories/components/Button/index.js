@@ -10,7 +10,8 @@ import React from 'react'
 // import Icon from '../Icon'
 
 // import { icons } from '../../icons/icons'
-import { View, TouchableHighlight, Text } from 'react-native'
+import { View, TouchableHighlight, Text, Pressable } from 'react-native'
+import { buttonStyles } from './buttonStyles'
 
 const Button = ({
   size,
@@ -18,28 +19,37 @@ const Button = ({
   onClick,
   children,
   loading,
-  iconName
+  iconName,
+  buttonType
 }) => {
 
   // const buttonClassName = size === BUTTON_SIZE_SMALL ? 'small' : 'large'
 
+  const style = buttonStyles(buttonType)
+
   return (
-    <View>
-      <TouchableHighlight
-        // className={`Button-${buttonClassName}`}
-        disabled={disabled || loading}
-        onClick={onClick}
-        loading={loading}
-        data-loading={loading}
-      // data-has-icon={!!icons?.[iconName]}
-      >
-        <View>
-          <Text>{children}</Text>
-          {/* {loading && <Spinner />}
-            {(!loading && iconName) && <Icon name={iconName} />} */}
-        </View>
-      </TouchableHighlight>
-    </View>
+    <Pressable
+      style={({ pressed }) => {
+        if(pressed) {
+          return style.areaActive
+        } else if(disabled) {
+          return style.areaDisabled
+        }
+        return style.area
+      }}
+      // className={`Button-${buttonClassName}`}
+      disabled={disabled || loading}
+      onClick={onClick}
+      loading={loading}
+      data-loading={loading}
+    // data-has-icon={!!icons?.[iconName]}
+    >
+      <View style={style.content}>
+        <Text style={style.text}>{children}</Text>
+        {/* {loading && <Spinner />}
+          {(!loading && iconName) && <Icon name={iconName} />} */}
+      </View>
+    </Pressable>
   )
 }
 
@@ -49,11 +59,8 @@ Button.defaultProps = {
   disabled: false,
   onClick: () => { },
   loading: null,
-  iconName: null
+  iconName: null,
+  buttonType: 'primaryDefault'
 }
-
-const buttonStyle = () => css`
-  backgroundColor: blue;
-`
 
 export default Button
