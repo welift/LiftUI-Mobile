@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, StyleSheet } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
+import Check from '../../icons/Check'
 import colors from '@theme/color';
+import types from '@theme/type'
 
 const Checkbox = ({
   label,
@@ -18,21 +20,19 @@ const Checkbox = ({
       onPress={() => setIsChecked(!isChecked)}
       underlayColor='transparent'
     >
-      <View>
+      <View style={styles.outerContainer}>
         <View style={boxViewStyle}>
           {
             (isChecked) ? (
-              <View style={{}}>
-                <Text>Checked</Text>
+              <View style={styles.selected}>
+                <Check />
               </View>
             ) : (
-              <View>
-                <Text>UnChecked</Text>
-              </View>
+              <View />
             )
           }
         </View>
-        <Text>
+        <Text style={styles.checkboxLabel}>
           Test
         </Text>
       </View>
@@ -40,19 +40,43 @@ const Checkbox = ({
   )
 }
 
+const baseBoxView = {
+  width: 16,
+  height: 16,
+  borderRadius: 2,
+  borderWidth: 1,
+  marginRight: 16
+}
+
 const styles = StyleSheet.create({
   boxViewChecked: {
-    width: 16,
-    height: 16,
+    ...baseBoxView,
     backgroundColor: colors.primary,
-    borderRadius: 2,
+    borderColor: colors.primary
   },
   boxViewUnChecked: {
-    width: 16,
-    height: 16,
+    ...baseBoxView,
     backgroundColor: 'transparent',
-    borderRadius: 2,
+    borderColor: colors.basicDull
   },
+  checkChecked: {
+    color: colors.neutral
+  },
+  checkUnChecked: {
+    color: colors.basic
+  },
+  selected: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  outerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  checkboxLabel: {
+    ...types.smallBody
+  }
 })
 
 export default Checkbox
