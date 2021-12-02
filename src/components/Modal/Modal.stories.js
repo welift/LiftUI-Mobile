@@ -1,25 +1,23 @@
+import { storiesOf } from '@storybook/react-native';
+import { action } from '@storybook/addon-actions';
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
-import Modal from '../components/Modal';
-import Button from '../components/Button'
+import { View } from 'react-native';
+import CenterView from '../CenterView';
+import Modal from '.';
+import Button from '../Button';
 
-export default {
-  title: 'Modal',
-  component: Modal,
-};
-
-const Template = (args) => {
-  const [showModal, setShowModal] = useState(false)
-
+const StoryModal = () => {
+  const[showModal, setShowModal] = useState(false)
   return (
     <View>
-        <Modal visible={showModal} buttonText='Accept' title='Accept this lift?' onClose={() => setShowModal(false)}>
-          <View>
-            <Text>This is the children</Text>
-          </View>
-        </Modal>
-        <Button onPress={() => setShowModal(true)}>Open Modal</Button>
-      </View>
+      {showModal && <Modal visible={showModal} onClose={() => setShowModal(false)} title='Accept Lift?' buttonText='Accept' />}
+      <Button onPress={() => setShowModal(true)}>Open Modal</Button>
+    </View>
   )
 }
-export const Controls = Template.bind({})
+
+storiesOf('Modal', module)
+  .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
+  .add('default Modal', () => (
+    <StoryModal />
+  ))

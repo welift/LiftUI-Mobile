@@ -1,13 +1,13 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  centerView: {
+  centerView: (visible) => ({
     flex: 1,
     display: 'flex',
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: 'rgba(0, 0, 0, .25)',
-  },
+    backgroundColor: (visible ? 'rgba(0, 0, 0, .25)' : 'inherit'),
+  }),
   tile: {
     paddingBottom: 0,
     borderRadius: 20
