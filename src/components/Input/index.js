@@ -34,7 +34,14 @@ const Input = ({
   return (
     <SafeAreaView style={styles.container}>
       <TouchableWithoutFeedback
-        style={styles.border}
+        onPress={handleInputClick}
+        onBlur={() => setTouched(true)}
+        style={
+          styles.border(
+            inputRef.current.hasFocus,
+            disabled,
+            value,
+            hasError)}
         data-hint={hint?.length > 0}
         data-error={hasError}
         data-filled={value?.length > 0}
@@ -71,15 +78,35 @@ const styles = StyleSheet.create({
   input: {
     maxWidth: '90%'
   },
-  border: {
-    borderWidth: 1,
-    borderRadius: 10,
-    borderColor: colors.accentDull,
-    minHeight: 48,
-    maxWidth: '90%',
-    width: 200,
-    paddingTop: 8,
-    paddingLeft: 16
+  border: (hasFocus, disabled, value, hasError) => {
+    let style = {
+      borderWidth: 1,
+      borderRadius: 10,
+      borderColor: colors.secondaryLight,
+      minHeight: 48,
+      maxWidth: '90%',
+      width: 200,
+      paddingTop: 8,
+      paddingLeft: 16
+    }
+
+    if (hasError) {
+      style.borderColor = colors.primary
+      return style
+    }
+
+    if (hasFocus) {
+      style.borderColor = colors.accentSoft
+      return style
+    }
+
+    if (disabled) {
+      style.borderColor = colors.basicLight
+      style.backgroundColor = colors.secondaryLight
+      return style
+    }
+
+    return style
   }
 })
 
