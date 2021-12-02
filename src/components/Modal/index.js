@@ -20,7 +20,8 @@ const Modal = ({
   ...rest
 }) => {
   return (
-    <NativeModal 
+    <NativeModal
+      animationType='fade'
       transparent={true}
       visible={visible}
       onRequestClose={onClose}
