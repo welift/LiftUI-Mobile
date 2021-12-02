@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  centerView: (visible) => ({
+  innerCenter: (visible) => ({
     flex: 1,
     display: 'flex',
     justifyContent: "center",
