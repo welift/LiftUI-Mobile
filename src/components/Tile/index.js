@@ -3,9 +3,9 @@ import { View } from 'react-native'
 
 import { styles } from './tileStyles'
 
-const Tile = ({ children, width, height, padding }) => {
+const Tile = ({ children, width, height, padding, style }) => {
   return (
-    <View style={styles.tile(width, height, padding)}>
+    <View style={[styles.tile(width, height, padding), style]}>
       {children}
     </View>
   )

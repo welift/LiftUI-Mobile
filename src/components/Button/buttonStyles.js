@@ -8,8 +8,8 @@ const defaultArea = {
   borderRadius: 40,
   alignItems: 'center',
   justifyContent: 'center',
-  marginTop: 32,
-  marginBottom: 32
+  marginTop: 36,
+  marginBottom: 36
 }
 
 const buttonFont = {
