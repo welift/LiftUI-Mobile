@@ -7,7 +7,7 @@ import Modal from '.';
 import Button from '../Button';
 
 const StoryModal = () => {
-  const[showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false)
   return (
     <View>
       {showModal && <Modal visible={showModal} onClose={() => setShowModal(false)} title='Accept Lift?' buttonText='Accept' />}
