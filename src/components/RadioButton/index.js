@@ -36,7 +36,7 @@ const RadioButton = ({
           {
             (isChecked) ? (
               <View style={styles.selected}>
-                <Check fill='#FFFFFF' width={10} height={7} />
+                <Check fill={styles.check.color} width={10} height={7} />
               </View>
             ) : (
               <View />

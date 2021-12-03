@@ -12,6 +12,9 @@ const baseBoxView = {
 }
 
 export const styles = StyleSheet.create({
+  check: {
+    color: colors.neutral
+  },
   boxViewChecked: (disabled) => ({
     ...baseBoxView,
     backgroundColor: (disabled ? colors.primaryLight : colors.primary),
