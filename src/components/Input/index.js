@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from "react"
-import { View, Text, TextInput, StyleSheet, TouchableWithoutFeedback } from "react-native"
-import colors from '@theme/color'
+import React, { useRef, useState } from "react"
+import { View, Text, TextInput, TouchableWithoutFeedback } from "react-native"
+import { styles } from './inputStyles'
+import PropTypes from 'prop-types'
 
 const Input = ({
   label,
@@ -9,12 +10,15 @@ const Input = ({
   disabled,
   placeholder,
   maxLength,
-  name,
   error,
+  width,
+  defaultValue,
+  touched,
+  name,
   ...rest
 }) => {
-  const [value, setValue] = useState('')
-  const [touched, setTouched] = useState(false)
+  const [value, setValue] = useState(defaultValue)
+  const [isTouched, setTouched] = useState(touched)
   const [isFocused, setIsFocused] = useState(false)
 
   const handleChange = (e) => {
@@ -26,99 +30,85 @@ const Input = ({
   const handleInputClick = () => {
     if (inputRef) {
       inputRef.current.focus()
-      console.log('focusing!')
       setIsFocused(true)
     }
-
-    console.log('outside of if')
   }
 
-  console.log("is focused", inputRef?.current?.isFocused())
-  const inputRef = useRef(null)
+  const handleInputClickOut = () => {
+    setIsFocused(false)
+    setTouched(true)
+  }
 
-  const hasError = error?.length > 0 && touched
+  const inputRef = useRef(null)
+  const hasError = error?.length > 0 && isTouched
 
   return (
-    <TouchableWithoutFeedback
-      onPressIn={handleInputClick}
-      onBlur={() => setTouched(true)}
+    <View
       style={
         styles.border(
           isFocused,
           disabled,
           value,
-          hasError)}
-      data-hint={hint?.length > 0}
-      data-error={hasError}
-      data-filled={value?.length > 0}
-      data-disabled={disabled}
+          hasError,
+          width)}
     >
-      <View>
-        <Text>{label}</Text>
-        <TextInput
-          ref={inputRef}
-          style={styles.input}
-          name={name}
-          onPressIn={handleInputClick}
-          editable={!disabled}
-          placeholder={placeholder}
-          onChange={handleChange}
-          maxLength={maxLength}
-          autoComplete="nope"
-          {...rest}
-        />
-      </View>
-    </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback
+        onPressIn={handleInputClick}
+        onBlur={handleInputClickOut}
+      >
+        <View>
+          <Text style={styles.label(hasError, disabled)}>{label}</Text>
+          <TextInput
+            ref={inputRef}
+            style={styles.input(disabled, hasError)}
+            name={name}
+            onPressIn={handleInputClick}
+            editable={!disabled}
+            placeholder={placeholder}
+            onChange={handleChange}
+            maxLength={maxLength}
+            autoComplete="nope"
+            value={value}
+            placeholderTextColor={styles.input(disabled, hasError).color}
+            {...rest}
+          />
+        </View>
+      </TouchableWithoutFeedback>
+      {
+        (hint && !hasError) && (
+          <Text style={styles.hintText}>{hint}</Text>
+        )
+      }
+      {
+        (hasError) && (
+          <Text style={styles.errorText}>{error}</Text>
+        )
+      }
+    </View>
   )
 }
 
 Input.defaultProps = {
   onChange: () => { },
-  placeholder: 'test',
+  placeholder: 'Empty Field',
   disabled: false,
-  label: 'test label',
-  hasError: false
-}
-
-const baseBorder = {
-  borderWidth: 1,
-  borderRadius: 10,
-  minHeight: 48,
-  maxWidth: '90%',
+  label: 'Label',
   width: 200,
-  paddingTop: 8,
-  paddingLeft: 16
+  touched: false
 }
 
-const styles = StyleSheet.create({
-  input: {
-    maxWidth: '90%'
-  },
-  border: (hasFocus, disabled, value, hasError) => {
-    if (hasError) {
-      return {
-        ...baseBorder,
-        borderColor: colors.primary
-      }
-    }
-
-    if (hasFocus) {
-      return {
-        ...baseBorder,
-        borderColor: colors.accentSoft
-      }
-    }
-
-    if (disabled) {
-      return {
-        ...baseBorder,
-        borderColor: colors.basicLight,
-        backgroundColor: colors.secondaryLight
-      }
-    }
-
-    return baseBorder
-  }
-})
+Input.propTypes = {
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
+  disabled: PropTypes.bool,
+  label: PropTypes.string,
+  width: PropTypes.number,
+  maxLength: PropTypes.number,
+  error: PropTypes.string,
+  defaultValue: PropTypes.string,
+  hint: PropTypes.string,
+  touched: PropTypes.bool,
+  name: PropTypes.string
+}
 
 export default Input
