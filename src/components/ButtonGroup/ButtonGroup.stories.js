@@ -1,25 +1,33 @@
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
+import { View } from 'react-native'
 import { ButtonGroup, CenterView } from '../../components'
 
 storiesOf('ButtonGroup', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('Vertical', () => (
-    <ButtonGroup 
-      buttonOneText='Cancel'
-      buttonTwoText='Confirm'
-      buttonOneProps={{
-        buttonType: 'primaryOutline'
-      }}
-    />
+    <View style={{ width: 'auto' }}>
+      <ButtonGroup
+        direction='vertical'
+        buttonOneText='Cancel'
+        buttonTwoText='Confirm'
+        buttonOneProps={{
+          buttonType: 'primaryOutline'
+        }}
+      />
+    </View>
+
   ))
   .add('Horizontal', () => (
-    <ButtonGroup 
-      direction='horizontal'
-      buttonOneText='Cancel'
-      buttonTwoText='Confirm'
-      buttonOneProps={{
-        buttonType: 'primaryOutline'
-      }}
-    />
+    <View style={{ width: 150 }}>
+      <ButtonGroup
+        direction='horizontal'
+        buttonOneText='Cancel'
+        buttonTwoText='Confirm'
+        buttonOneProps={{
+          buttonType: 'primaryOutline'
+        }}
+      />
+    </View>
+
   ))

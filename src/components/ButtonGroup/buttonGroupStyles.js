@@ -2,12 +2,13 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   vertical: {
-    display: 'flex',
-    justifyContent: 'space-between'
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   horizontal: {
-    display: 'flex',
-    flexDirection: 'row'
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
   },
   horizontalButtonOne: {
     margin: 0,

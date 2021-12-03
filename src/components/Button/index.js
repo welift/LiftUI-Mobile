@@ -1,7 +1,6 @@
 import React from 'react'
 import { View, Text, Pressable } from 'react-native'
-import { Icon } from '../../components'
-import { styles } from '../Tile/tileStyles'
+import Icon from '../Icon'
 import { buttonStyles } from './buttonStyles'
 
 const Button = ({

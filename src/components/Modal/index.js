@@ -10,8 +10,8 @@ import types from '@theme/type'
 import { styles } from './modalStyles'
 import Button from "../Button";
 
-const Modal = ({ 
-  visible, 
+const Modal = ({
+  visible,
   onClose,
   title,
   children,
@@ -28,19 +28,21 @@ const Modal = ({
       {...rest}
     >
       <View style={styles.innerCenter(visible)}>
-      <Tile padding={20} style={styles.tile}>
-        <Pressable onPress={onClose}><Icon name='closeX' width={16} height={16} /></Pressable>
+        <Tile padding={20} style={styles.tile}>
+          <Pressable onPress={onClose}><Icon name='closeX' width={16} height={16} /></Pressable>
           <Text style={[types.headingThree, styles.title]}>{title}</Text>
-            {children}
-          <Button onPress={onButtonPress}>{buttonText}</Button>
-      </Tile>
+          {children}
+          <View style={{ width: 'auto' }}>
+            <Button onPress={onButtonPress}>{buttonText}</Button>
+          </View>
+        </Tile>
       </View>
     </NativeModal>
   )
 }
 
 Modal.defaultProps = {
-  onButtonPress: () => {}
+  onButtonPress: () => { }
 }
 
 export default Modal

@@ -13,7 +13,7 @@ import Button from "../Button";
 
 import * as Animatable from 'react-native-animatable'
 
-const TogglableBottomSheet = ({ 
+const TogglableBottomSheet = ({
   title,
   children,
   onButtonPress,
@@ -26,7 +26,7 @@ const TogglableBottomSheet = ({
   const [showFullSheet, setShowFullSheet] = useState(false)
 
   const animatedHeight = useRef(new Animated.Value(76)).current
-  
+
   const onClose = () => {
     setShowFullSheet(false)
     Animated.timing(animatedHeight, {
@@ -58,7 +58,9 @@ const TogglableBottomSheet = ({
       <View style={styles.content}>
         {children}
       </View>
-      <Button {...buttonProps} onPress={onButtonPress}>{buttonText}</Button>
+      <View style={{ width: 'auto' }}>
+        <Button {...buttonProps} onPress={onButtonPress}>{buttonText}</Button>
+      </View>
     </>
   )
 
@@ -78,15 +80,15 @@ const TogglableBottomSheet = ({
 
   return (
     <>
-      <TouchableWithoutFeedback onPress={showFullSheet ? onClose : () => {}}>
+      <TouchableWithoutFeedback onPress={showFullSheet ? onClose : () => { }}>
         <View style={styles.innerCenter}>
-        <Pressable onPress={!showFullSheet ? onOpen : () => {}}>
-          <AnimatedTile height={animatedHeight} width='100%' style={currentStyles}>
+          <Pressable onPress={!showFullSheet ? onOpen : () => { }}>
+            <AnimatedTile height={animatedHeight} width='100%' style={currentStyles}>
               <>
-              {!showFullSheet && bottomTab}
-              {showFullSheet && bottomSheet}
+                {!showFullSheet && bottomTab}
+                {showFullSheet && bottomSheet}
               </>
-          </AnimatedTile>
+            </AnimatedTile>
           </Pressable>
         </View>
       </TouchableWithoutFeedback>
@@ -95,7 +97,7 @@ const TogglableBottomSheet = ({
 }
 
 TogglableBottomSheet.defaultProps = {
-  onButtonPress: () => {},
+  onButtonPress: () => { },
 }
 
 export default TogglableBottomSheet

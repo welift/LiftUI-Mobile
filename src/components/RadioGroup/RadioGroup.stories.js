@@ -36,7 +36,7 @@ const ConsoleRadioGroup = () => {
   )
 }
 
-storiesOf('Radio Button', module)
+storiesOf('Radio Group', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('is enabled', () => (
     <ConsoleRadioGroup />
