@@ -2,8 +2,8 @@ import { StyleSheet } from "react-native"
 import colors from '@theme/color'
 
 const border = {
-  borderWidth: 2,
-  borderRadius: 2,
+  borderWidth: 1,
+  borderRadius: 1,
   width: '100%',
 }
 

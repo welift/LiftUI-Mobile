@@ -7,10 +7,10 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.neutral,
     borderRadius: 10,
     shadowColor: '#997659',
-    minWidth: (width ? width : 346),
-    minHeight: (height ? height : 76),
+    minWidth: (width !== null ? width : 346),
+    minHeight: (height !== null ? height : 76),
     shadowOpacity: .15,
     shadowRadius: 10,
-    padding: (padding ? padding : 36)
+    padding: (padding !== null ? padding : 36)
   })
 })
