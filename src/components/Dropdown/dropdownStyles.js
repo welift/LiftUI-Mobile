@@ -15,6 +15,7 @@ const baseBorder = {
   paddingRight: 16,
   paddingBottom: 8,
   justifyContent: 'center',
+  backgroundColor: colors.neutral
 }
 
 export const styles = StyleSheet.create({
@@ -25,6 +26,17 @@ export const styles = StyleSheet.create({
   },
   iconContainer: {
     justifyContent: 'center'
+  },
+  optionsContainer: (width) => {
+    return {
+      minHeight: 12,
+      backgroundColor: colors.neutral,
+      zIndex: 5,
+      maxWidth: width - 30,
+      borderBottomLeftRadius: 10,
+      borderBottomRightRadius: 10,
+      paddingLeft: 16,
+    }
   },
   errorText: {
     ...types.label,

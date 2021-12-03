@@ -22,7 +22,7 @@ const Dropdown = ({
   const [value, setValue] = useState(defaultValue)
   const [isTouched, setTouched] = useState(touched)
   const [isFocused, setIsFocused] = useState(false)
-  const [open, setIsOpen] = useState(false)
+  const [open, setIsOpen] = useState(true)
 
   const handleChange = (e) => {
     e.preventDefault()
@@ -85,14 +85,14 @@ const Dropdown = ({
             <View style={styles.iconContainer}>
               <Icon name='downArrow' />
             </View>
-
           </View>
-
         </TouchableWithoutFeedback>
       </View>
       {
         (open) && (
-          <Text style={styles.hintText}>{hint}</Text>
+          <View style={styles.optionsContainer(width)}>
+            <Text>I'm an option</Text>
+          </View>
         )
       }
       {
