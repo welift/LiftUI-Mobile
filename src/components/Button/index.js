@@ -17,9 +17,6 @@ const Button = ({
   buttonType,
   customStyle
 }) => {
-
-  console.log('customStyle', customStyle)
-
   const style = buttonStyles(buttonType)
 
   const handleTextStyle = pressed => {
