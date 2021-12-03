@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
     marginBottom: 2,
     paddingLeft: 16,
   },
-  input: (disabled, hasError, width) => {
+  input: (disabled, hasError, width, iconName) => {
     let textColor = colors.secondary
 
     if (disabled)
@@ -59,8 +59,8 @@ export const styles = StyleSheet.create({
       height: 24,
       marginTop: 4,
       color: textColor,
-      maxWidth: width - 60,
-      minWidth: width - 60
+      maxWidth: iconName ? width - 60 : '100%',
+      minWidth: iconName ? width - 60 : '100%'
     }
   },
   label: (hasError, disabled) => {

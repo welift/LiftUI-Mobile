@@ -70,7 +70,7 @@ const Input = ({
               }
               <TextInput
                 ref={inputRef}
-                style={styles.input(disabled, hasError, width)}
+                style={styles.input(disabled, hasError, width, iconName)}
                 name={name}
                 onPressIn={handleInputClick}
                 editable={!disabled}
@@ -79,7 +79,7 @@ const Input = ({
                 maxLength={maxLength}
                 autoComplete="nope"
                 value={value}
-                placeholderTextColor={styles.input(disabled, hasError, width).color}
+                placeholderTextColor={styles.input(disabled, hasError, width, iconName).color}
                 {...rest}
               />
             </View>
