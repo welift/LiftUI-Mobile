@@ -113,8 +113,7 @@ Input.defaultProps = {
   onIconPress: () => { },
   disabled: false,
   width: 200,
-  touched: false,
-  iconName: 'eyeClosed'
+  touched: false
 }
 
 Input.propTypes = {
