@@ -57,7 +57,11 @@ const Input = ({
         onBlur={handleInputClickOut}
       >
         <View>
-          <Text style={styles.label(hasError, disabled)}>{label}</Text>
+          {
+            (label) && (
+              <Text style={styles.label(hasError, disabled)}>{label}</Text>
+            )
+          }
           <TextInput
             ref={inputRef}
             style={styles.input(disabled, hasError)}
@@ -90,11 +94,9 @@ const Input = ({
 
 Input.defaultProps = {
   onChange: () => { },
-  placeholder: 'Empty Field',
   disabled: false,
-  label: 'Label',
   width: 200,
-  touched: false
+  touched: false,
 }
 
 Input.propTypes = {

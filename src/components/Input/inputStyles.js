@@ -10,11 +10,12 @@ const baseBorder = {
   maxWidth: '90%',
   minWidth: 200,
   width: 200,
-  paddingTop: 8,
+  paddingTop: 12,
   paddingLeft: 16,
   paddingRight: 16,
   paddingBottom: 8,
-  marginBottom: 14
+  marginBottom: 14,
+  justifyContent: 'center',
 }
 
 export const styles = StyleSheet.create({
