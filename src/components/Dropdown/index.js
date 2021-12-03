@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react"
-import { View, Text, TextInput, TouchableWithoutFeedback } from "react-native"
+import { View, Text, TextInput, TouchableWithoutFeedback, Pressable } from "react-native"
 import { styles } from './dropdownStyles'
 import PropTypes from 'prop-types'
 import Icon from "../../components/Icon"
@@ -17,31 +17,95 @@ const Dropdown = ({
   touched,
   name,
   options,
+  searchValue,
+  selected,
+  onClose,
+  onOptionClick,
+  zeroStateText,
+  isDynamic,
   ...rest
 }) => {
+  const defaultSelectedValue = { label: null, value: null, selected: false }
   const [value, setValue] = useState(defaultValue)
   const [isTouched, setTouched] = useState(touched)
   const [isFocused, setIsFocused] = useState(false)
-  const [open, setIsOpen] = useState(true)
+  const [filterdOptions, setFilteredOptions] = useState(options)
+  const [selectedValue, setSelectedValue] = useState(selected)
+  const [open, setIsOpen] = useState(false)
 
   const handleChange = (e) => {
-    e.preventDefault()
-    setValue(e.target.value)
+    setValue(e)
+
+    // Search Functionality
+    const regex = new RegExp(`^${e}(.*)`, 'i')
+    const filteredObject = options.filter((val) => regex.test(val.label))
+    setFilteredOptions(filteredObject)
     onChange(e, value)
   }
 
-  const handleInputClick = () => {
+  const handleInputClick = (e) => {
+    e.preventDefault()
     if (inputRef) {
       inputRef.current.focus()
-      setIsFocused(true)
+      setIsFocused(!isFocused)
+      setIsOpen(!open)
     }
   }
 
   const handleInputClickOut = () => {
     setIsFocused(false)
     setTouched(true)
+    setIsOpen(false)
   }
 
+  const handleOptionClick = (item) => {
+    if (selectedValue?.value === item.value) {
+      setIsOpen(false)
+      setIsFocused(false)
+      setSelectedValue(defaultSelectedValue)
+      setValue('')
+    } else {
+      setSelectedValue(item)
+      setValue(item.label)
+      setIsFocused(false)
+      onChange({ target: { name: name, value: item.value } })
+    }
+    inputRef.current.blur()
+    setIsOpen(false)
+    onOptionClick(item)
+  }
+
+  const createDynamicDropdownItem = (item, index) => (
+    <DropdownItem
+      key={item.value}
+      item={item}
+      index={index}
+      handleOnClick={handleOptionClick}
+      isLast={index === options.length - 1}
+      selected={item.value === selectedValue.value}
+    />
+  )
+
+  const createDropdownItem = (item, index) => (
+    <DropdownItem
+      key={item.value}
+      item={item}
+      index={index}
+      handleOnClick={handleOptionClick}
+      isLast={index === filterdOptions.length - 1}
+      selected={item.value === selectedValue.value}
+    />
+  )
+
+  const dynamicOptions = options?.length ? options.map(createDropdownItem) : (
+    <View style={styles.option(false, false, true)}>
+      <Text style={styles.optionText}>{zeroStateText}</Text>
+    </View>)
+  const dropdownOptions = filterdOptions?.length ? filterdOptions.map(createDropdownItem) : (
+    <View style={styles.option(false, false, true)}>
+      <Text style={styles.optionText}>{zeroStateText}</Text>
+    </View>
+  )
   const inputRef = useRef(null)
   const hasError = error?.length > 0 && isTouched
 
@@ -74,7 +138,7 @@ const Dropdown = ({
                 onPressIn={handleInputClick}
                 editable={!disabled}
                 placeholder={placeholder}
-                onChange={handleChange}
+                onChangeText={handleChange}
                 maxLength={maxLength}
                 autoComplete="nope"
                 value={value}
@@ -83,7 +147,7 @@ const Dropdown = ({
               />
             </View>
             <View style={styles.iconContainer}>
-              <Icon name='downArrow' />
+              <Icon name='downArrow' width={12} height={12} />
             </View>
           </View>
         </TouchableWithoutFeedback>
@@ -91,7 +155,7 @@ const Dropdown = ({
       {
         (open) && (
           <View style={styles.optionsContainer(width)}>
-            <Text>I'm an option</Text>
+            {isDynamic ? dynamicOptions : dropdownOptions}
           </View>
         )
       }
@@ -101,7 +165,6 @@ const Dropdown = ({
         )
       }
     </View>
-
   )
 }
 
@@ -110,6 +173,16 @@ Dropdown.defaultProps = {
   disabled: false,
   width: 200,
   touched: false,
+  selected: { label: null, value: null, selected: false },
+  zeroStateText: 'No available options',
+  isDynamic: false,
+  onOptionClick: () => { },
+  onClose: () => { },
+  options: [
+    { label: '1', value: '1', selected: false },
+    { label: '2', value: '2', selected: false },
+    { label: '3', value: '3', selected: false }
+  ]
 }
 
 Dropdown.propTypes = {
@@ -124,6 +197,19 @@ Dropdown.propTypes = {
   hint: PropTypes.string,
   touched: PropTypes.bool,
   name: PropTypes.string
+}
+
+const DropdownItem = ({ item, selected, handleOnClick, isLast }) => {
+  return (
+    <Pressable
+      style={({ pressed }) => styles.option(pressed, selected, isLast)}
+      onPress={() => handleOnClick(item)}>
+      <View style={styles.optionRow}>
+        <Text style={styles.optionText}>{item.label}</Text>
+        {selected && <Icon name='check' width={12} height={12} />}
+      </View>
+    </Pressable>
+  )
 }
 
 export default Dropdown

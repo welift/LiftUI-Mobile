@@ -29,14 +29,45 @@ export const styles = StyleSheet.create({
   },
   optionsContainer: (width) => {
     return {
-      minHeight: 12,
+      position: 'absolute',
+      top: 60,
+      minHeight: 16,
       backgroundColor: colors.neutral,
       zIndex: 5,
-      maxWidth: width - 30,
+      width: width - 30,
       borderBottomLeftRadius: 10,
       borderBottomRightRadius: 10,
-      paddingLeft: 16,
+      shadowColor: '#997659',
+      shadowOpacity: .15,
+      shadowRadius: 10,
     }
+  },
+  option: (pressed, selected, last) => {
+    let background = colors.neutral
+
+    if (selected)
+      background = colors.secondaryLight
+
+    if (pressed)
+      background = colors.neutralDull
+    return {
+      paddingRight: 16,
+      height: 28,
+      minHeight: 28,
+      justifyContent: 'center',
+      backgroundColor: background,
+      borderBottomLeftRadius: last ? 10 : 0,
+      borderBottomRightRadius: last ? 10 : 0,
+    }
+  },
+  optionRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  optionText: {
+    ...types.label,
+    lineHeight: 12,
+    paddingLeft: 16
   },
   errorText: {
     ...types.label,
@@ -45,7 +76,6 @@ export const styles = StyleSheet.create({
     marginTop: 4,
     marginBottom: 2,
     color: colors.primary,
-    paddingLeft: 16
   },
   hintText: {
     ...types.label,
@@ -116,7 +146,8 @@ export const styles = StyleSheet.create({
         borderColor: colors.accentSoft,
         width: width,
         borderBottomLeftRadius: 0,
-        borderBottomRightRadius: 0
+        borderBottomRightRadius: 0,
+        zIndex: 6
       }
     }
 
