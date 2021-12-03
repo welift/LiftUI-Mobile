@@ -7,15 +7,31 @@ storiesOf('Input', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('Default', () => (
     <View>
-      <Input />
+      <Input placeholder='Placeholder' />
       <Input />
     </View>
   ))
 
-  .add('Disabled Input', () => (
-    <Input disabled />
+  .add('Default with label', () => (
+    <Input label='test' />
   ))
 
-  .add('Has Error', () => (
-    <Input error='Error' touched />
+  .add('Default with hint', () => (
+    <Input hint='test' />
+  ))
+
+  .add('Default with error', () => (
+    <Input error='test' touched />
+  ))
+
+  .add('With Hint and Label', () => (
+    <Input label='label' hint='hint' placeholder='Placeholder' />
+  ))
+
+  .add('Disabled Input', () => (
+    <Input disabled label='label' hint='hint' placeholder='Placeholder' />
+  ))
+
+  .add('All with Error', () => (
+    <Input label='label' hint='hint' placeholder='Placeholder' error="error" touched />
   ))
