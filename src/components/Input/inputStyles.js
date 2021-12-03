@@ -14,7 +14,6 @@ const baseBorder = {
   paddingLeft: 16,
   paddingRight: 16,
   paddingBottom: 8,
-  marginBottom: 14,
   justifyContent: 'center',
 }
 
@@ -23,14 +22,18 @@ export const styles = StyleSheet.create({
     ...types.label,
     fontSize: 10,
     lineHeight: 10,
-    marginTop: 6,
+    marginTop: 4,
+    marginBottom: 2,
     color: colors.primary,
+    paddingLeft: 16
   },
   hintText: {
     ...types.label,
     fontSize: 10,
     lineHeight: 10,
-    marginTop: 6,
+    marginTop: 4,
+    marginBottom: 2,
+    paddingLeft: 16,
   },
   input: (disabled, hasError) => {
     let textColor = colors.secondary

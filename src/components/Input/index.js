@@ -43,41 +43,43 @@ const Input = ({
   const hasError = error?.length > 0 && isTouched
 
   return (
-    <View
-      style={
-        styles.border(
-          isFocused,
-          disabled,
-          value,
-          hasError,
-          width)}
-    >
-      <TouchableWithoutFeedback
-        onPressIn={handleInputClick}
-        onBlur={handleInputClickOut}
+    <View>
+      <View
+        style={
+          styles.border(
+            isFocused,
+            disabled,
+            value,
+            hasError,
+            width)}
       >
-        <View>
-          {
-            (label) && (
-              <Text style={styles.label(hasError, disabled)}>{label}</Text>
-            )
-          }
-          <TextInput
-            ref={inputRef}
-            style={styles.input(disabled, hasError)}
-            name={name}
-            onPressIn={handleInputClick}
-            editable={!disabled}
-            placeholder={placeholder}
-            onChange={handleChange}
-            maxLength={maxLength}
-            autoComplete="nope"
-            value={value}
-            placeholderTextColor={styles.input(disabled, hasError).color}
-            {...rest}
-          />
-        </View>
-      </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback
+          onPressIn={handleInputClick}
+          onBlur={handleInputClickOut}
+        >
+          <View>
+            {
+              (label) && (
+                <Text style={styles.label(hasError, disabled)}>{label}</Text>
+              )
+            }
+            <TextInput
+              ref={inputRef}
+              style={styles.input(disabled, hasError)}
+              name={name}
+              onPressIn={handleInputClick}
+              editable={!disabled}
+              placeholder={placeholder}
+              onChange={handleChange}
+              maxLength={maxLength}
+              autoComplete="nope"
+              value={value}
+              placeholderTextColor={styles.input(disabled, hasError).color}
+              {...rest}
+            />
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
       {
         (hint && !hasError) && (
           <Text style={styles.hintText}>{hint}</Text>
@@ -89,6 +91,7 @@ const Input = ({
         )
       }
     </View>
+
   )
 }
 
