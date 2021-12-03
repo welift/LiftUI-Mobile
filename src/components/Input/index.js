@@ -1,7 +1,9 @@
 import React, { useRef, useState } from "react"
 import { View, Text, TextInput, TouchableWithoutFeedback } from "react-native"
 import { styles } from './inputStyles'
+import Icon from "../../components/Icon"
 import PropTypes from 'prop-types'
+import Pressable from "react-native/Libraries/Components/Pressable/Pressable"
 
 const Input = ({
   label,
@@ -15,6 +17,8 @@ const Input = ({
   defaultValue,
   touched,
   name,
+  iconName,
+  onIconPress,
   ...rest
 }) => {
   const [value, setValue] = useState(defaultValue)
@@ -57,26 +61,35 @@ const Input = ({
           onPressIn={handleInputClick}
           onBlur={handleInputClickOut}
         >
-          <View>
+          <View style={styles.container}>
+            <View>
+              {
+                (label) && (
+                  <Text style={styles.label(hasError, disabled)}>{label}</Text>
+                )
+              }
+              <TextInput
+                ref={inputRef}
+                style={styles.input(disabled, hasError, width)}
+                name={name}
+                onPressIn={handleInputClick}
+                editable={!disabled}
+                placeholder={placeholder}
+                onChange={handleChange}
+                maxLength={maxLength}
+                autoComplete="nope"
+                value={value}
+                placeholderTextColor={styles.input(disabled, hasError, width).color}
+                {...rest}
+              />
+            </View>
             {
-              (label) && (
-                <Text style={styles.label(hasError, disabled)}>{label}</Text>
+              (iconName) && (
+                <Pressable style={styles.iconContainer} onPress={onIconPress}>
+                  <Icon name={iconName} width={16} height={16} />
+                </Pressable>
               )
             }
-            <TextInput
-              ref={inputRef}
-              style={styles.input(disabled, hasError)}
-              name={name}
-              onPressIn={handleInputClick}
-              editable={!disabled}
-              placeholder={placeholder}
-              onChange={handleChange}
-              maxLength={maxLength}
-              autoComplete="nope"
-              value={value}
-              placeholderTextColor={styles.input(disabled, hasError).color}
-              {...rest}
-            />
           </View>
         </TouchableWithoutFeedback>
       </View>
@@ -97,9 +110,11 @@ const Input = ({
 
 Input.defaultProps = {
   onChange: () => { },
+  onIconPress: () => { },
   disabled: false,
   width: 200,
   touched: false,
+  iconName: 'eyeClosed'
 }
 
 Input.propTypes = {

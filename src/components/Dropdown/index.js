@@ -140,7 +140,7 @@ const Dropdown = ({
                 maxLength={maxLength}
                 autoComplete="nope"
                 value={value}
-                placeholderTextColor={styles.input(disabled, hasError).color}
+                placeholderTextColor={styles.input(disabled, hasError, width).color}
                 {...rest}
               />
             </View>
@@ -179,11 +179,6 @@ Dropdown.defaultProps = {
   isDynamic: false,
   onOptionClick: () => { },
   onClose: () => { },
-  options: [
-    { key: '1', label: '1', value: '1', selected: false },
-    { key: '2', label: '2', value: '2', selected: false },
-    { key: '3', label: '3', value: '3', selected: false }
-  ]
 }
 
 Dropdown.propTypes = {
