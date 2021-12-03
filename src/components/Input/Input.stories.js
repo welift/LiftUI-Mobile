@@ -1,10 +1,13 @@
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
-import Input from '.';
-import CenterView from '../CenterView';
+import { View } from 'react-native';
+import { Input, CenterView } from '../../components'
 
 storiesOf('Input', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('Default', () => (
-    <Input />
+    <View>
+      <Input />
+      <Input />
+    </View>
   ))
