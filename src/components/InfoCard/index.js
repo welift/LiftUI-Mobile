@@ -6,18 +6,21 @@ import Tile from "../Tile";
 import Line from "../Line";
 
 const InfoCard = ({ children, headerLeft, headerRight }) => {
-  const count = Children.count(children)
+  const spreadChildren = children?.length > 0 ? children : [children]
 
-  const renderChildren = children.map((child, index) => (
+  const renderChild = (child, index) => (
     <View key={index}>
       <View style={styles.content}>
         {child} 
       </View>
       <View style={styles.line}>
-      {index !== children.length - 1 && <Line lineType='bold' />}
+      {index !== spreadChildren.length - 1 && <Line lineType='bold' />}
       </View>
     </View>
-  ))
+  )
+
+  const renderChildren = spreadChildren?.map((child, index) => renderChild(child, index))
+  
   return (
     <Tile padding={0} style={{ marginBottom: 22 }}>
       <View style={styles.headerRow}>

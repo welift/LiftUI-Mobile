@@ -20,6 +20,9 @@ storiesOf('InfoCard', module)
         <Text>Test</Text>
         <Text>Test</Text>
       </InfoCard>
+      <InfoCard headerLeft='Oct 29' headerRight='Friday'>
+        <Text>Singular</Text>
+      </InfoCard>
     </View>
     
   ))
