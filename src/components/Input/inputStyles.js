@@ -15,6 +15,7 @@ const baseBorder = {
   paddingRight: 16,
   paddingBottom: 8,
   justifyContent: 'center',
+  backgroundColor: colors.neutral
 }
 
 export const styles = StyleSheet.create({

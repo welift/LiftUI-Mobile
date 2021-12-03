@@ -34,6 +34,7 @@ export const styles = StyleSheet.create({
       minHeight: 16,
       backgroundColor: colors.neutral,
       zIndex: 5,
+      elevation: 5,
       width: width - 30,
       borderBottomLeftRadius: 10,
       borderBottomRightRadius: 10,

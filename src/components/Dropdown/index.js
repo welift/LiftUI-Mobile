@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react"
-import { View, Text, TextInput, TouchableWithoutFeedback, Pressable } from "react-native"
+import { View, Text, TextInput, TouchableWithoutFeedback, Pressable, FlatList } from "react-native"
 import { styles } from './dropdownStyles'
 import PropTypes from 'prop-types'
 import Icon from "../../components/Icon"
@@ -23,9 +23,10 @@ const Dropdown = ({
   onOptionClick,
   zeroStateText,
   isDynamic,
+  style,
   ...rest
 }) => {
-  const defaultSelectedValue = { label: null, value: null, selected: false }
+  const defaultSelectedValue = { key: null, label: null, value: null, selected: false }
   const [value, setValue] = useState(defaultValue)
   const [isTouched, setTouched] = useState(touched)
   const [isFocused, setIsFocused] = useState(false)
@@ -97,20 +98,17 @@ const Dropdown = ({
     />
   )
 
-  const dynamicOptions = options?.length ? options.map(createDropdownItem) : (
-    <View style={styles.option(false, false, true)}>
-      <Text style={styles.optionText}>{zeroStateText}</Text>
-    </View>)
-  const dropdownOptions = filterdOptions?.length ? filterdOptions.map(createDropdownItem) : (
+  const createZeroStateText = () => (
     <View style={styles.option(false, false, true)}>
       <Text style={styles.optionText}>{zeroStateText}</Text>
     </View>
   )
+
   const inputRef = useRef(null)
   const hasError = error?.length > 0 && isTouched
 
   return (
-    <View>
+    <View style={style}>
       <View
         style={
           styles.border(
@@ -154,16 +152,19 @@ const Dropdown = ({
       </View>
       {
         (open) && (
-          <View style={styles.optionsContainer(width)}>
-            {isDynamic ? dynamicOptions : dropdownOptions}
-          </View>
+          <FlatList
+            style={styles.optionsContainer(width)}
+            data={isDynamic ? options : filterdOptions}
+            renderItem={({ item, index }) => isDynamic ? createDynamicDropdownItem(item, index) : createDropdownItem(item, index)}
+            ListEmptyComponent={createZeroStateText}
+          />
         )
       }
-      {
+      {/* {
         (hasError) && (
           <Text style={styles.errorText}>{error}</Text>
         )
-      }
+      } */}
     </View>
   )
 }
@@ -173,15 +174,15 @@ Dropdown.defaultProps = {
   disabled: false,
   width: 200,
   touched: false,
-  selected: { label: null, value: null, selected: false },
+  selected: { key: null, label: null, value: null, selected: false },
   zeroStateText: 'No available options',
   isDynamic: false,
   onOptionClick: () => { },
   onClose: () => { },
   options: [
-    { label: '1', value: '1', selected: false },
-    { label: '2', value: '2', selected: false },
-    { label: '3', value: '3', selected: false }
+    { key: '1', label: '1', value: '1', selected: false },
+    { key: '2', label: '2', value: '2', selected: false },
+    { key: '3', label: '3', value: '3', selected: false }
   ]
 }
 
