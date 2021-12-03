@@ -60,7 +60,6 @@ const BottomSheet = ({
 
 BottomSheet.defaultProps = {
   onButtonPress: () => {},
-  direction: 'vertical'
 }
 
 export default BottomSheet
