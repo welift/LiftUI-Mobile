@@ -29,8 +29,8 @@ const ConsoleRadioGroup = () => {
   ]
 
   return (
-    <View>
-      <RadioGroup options={options} onChange={consoleLogEvent} />
+    <View style={{ alignItems: 'center' }}>
+      <RadioGroup direction='column' buttonPadding={20} options={options} onChange={consoleLogEvent} />
       <Text>Selected Value: {selectedValue}</Text>
     </View>
   )

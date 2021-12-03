@@ -10,7 +10,8 @@ const RadioButton = ({
   value,
   onPress,
   disabled,
-  selected
+  selected,
+  style
 }) => {
   const [isChecked, setIsChecked] = useState(selected)
   const boxViewStyle = isChecked ? styles.boxViewChecked : styles.boxViewUnChecked
@@ -28,6 +29,7 @@ const RadioButton = ({
       onPress={handleChange}
       underlayColor='transparent'
       disabled={disabled}
+      style={style}
     >
       <View style={styles.outerContainer}>
         <View style={boxViewStyle(disabled)}>

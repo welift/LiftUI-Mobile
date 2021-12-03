@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { Text, View } from 'react-native'
 import RadioButton from '../RadioButton'
+import { styles } from '../Tile/tileStyles'
 
 const RadioGroup = ({
   options,
-  onChange
+  onChange,
+  direction,
+  buttonPadding,
 }) => {
   const [buttons, setButtons] = useState(options)
   const handleOnChange = (e, value) => {
@@ -23,9 +26,9 @@ const RadioGroup = ({
   }
 
   return (
-    <View>
+    <View style={{ flexDirection: direction }}>
       {buttons && buttons.map((option) => (
-        <RadioButton onPress={handleOnChange} label={option.label} selected={option.selected} value={option.value} />
+        <RadioButton style={{ paddingLeft: buttonPadding, paddingRight: buttonPadding }} onPress={handleOnChange} label={option.label} selected={option.selected} value={option.value} />
       ))
       }
     </View>
@@ -34,6 +37,8 @@ const RadioGroup = ({
 
 RadioGroup.defaultProps = {
   onChange: () => { },
+  direction: 'column',
+  buttonPadding: 10,
 }
 
 export default RadioGroup
