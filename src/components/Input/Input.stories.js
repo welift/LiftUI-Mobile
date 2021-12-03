@@ -3,19 +3,6 @@ import React, { useState } from 'react';
 import { View } from 'react-native';
 import { Input, CenterView } from '../../components';
 
-const PasswordInput = () => {
-  const [isPassword, setIsPassword] = useState(true)
-
-  return (
-    <Input
-      placeholder='Password'
-      iconName={isPassword ? 'eyeClosed' : 'eyeOpen'}
-      onIconPress={() => setIsPassword(!isPassword)}
-      secureTextEntry={isPassword}
-    />
-  )
-}
-
 storiesOf('Input', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('Default', () => (
@@ -47,8 +34,4 @@ storiesOf('Input', module)
 
   .add('All with Error', () => (
     <Input label='label' hint='hint' placeholder='Placeholder' error="error" touched />
-  ))
-
-  .add('Default with Icon / Password', () => (
-    <PasswordInput />
   ))
