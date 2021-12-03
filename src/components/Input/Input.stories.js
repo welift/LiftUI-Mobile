@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react-native';
-import React, { useState } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import { Input, CenterView } from '../../components';
 
