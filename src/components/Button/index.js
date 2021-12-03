@@ -1,10 +1,6 @@
 import React from 'react'
-
-// import Spinner from '../Spinner'
-// import Icon from '../Icon'
-
-// import { icons } from '../../icons/icons'
 import { View, Text, Pressable } from 'react-native'
+import Icon from '../Icon'
 import { buttonStyles } from './buttonStyles'
 
 const Button = ({
@@ -20,14 +16,14 @@ const Button = ({
   const style = buttonStyles(buttonType)
 
   const handleTextStyle = pressed => {
-    if(pressed) return style.activeText
-    if(disabled) return style.disabledText
+    if (pressed) return style.activeText
+    if (disabled) return style.disabledText
     return style.text
   }
 
   const handleButtonStyle = (pressed, customStyle = null) => {
-    if(pressed) return [style.areaActive, customStyle]
-    if(disabled) return [style.areaDisabled, customStyle]
+    if (pressed || loading) return [style.areaActive, customStyle]
+    if (disabled) return [style.areaDisabled, customStyle]
     return [style.area, customStyle]
   }
 
@@ -41,13 +37,20 @@ const Button = ({
       data-loading={loading}
     // data-has-icon={!!icons?.[iconName]}
     >{({ pressed }) => (
-      <View style={[style.content, customStyle?.buttonContent]}>
-        <Text style={[handleTextStyle(pressed), customStyle?.buttonText]}>{children}</Text>
-        {/* {loading && <Spinner />}
-          {(!loading && iconName) && <Icon name={iconName} />} */}
+      <View style={style.outerContainer}>
+        <View style={[iconName ? style.iconContent : style.content, customStyle?.buttonContent]}>
+          {!loading && <Text style={[handleTextStyle(pressed), customStyle?.buttonText]}>{children}</Text>}
+          {loading && <View style={{ marginStart: 16, marginEnd: 16 }}><Icon name='loading' width={16} height={16} fill='#FFFFFF' /></View>}
+        </View>
+        {
+          (iconName && (!loading)) && (
+            <View style={{ marginEnd: 16 }} >
+              <Icon name={iconName} width={16} height={16} fill='#FFFFFF' />
+            </View>
+          )
+        }
       </View>
     )}
-      
     </Pressable>
   )
 }
@@ -57,7 +60,7 @@ Button.defaultProps = {
   // size: BUTTON_SIZE_LARGE,
   disabled: false,
   onPress: () => { },
-  loading: null,
+  loading: false,
   iconName: null,
   buttonType: 'primaryDefault'
 }

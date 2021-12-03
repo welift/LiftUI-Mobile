@@ -1,9 +1,23 @@
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View } from 'react-native';
-import Button from '.'
-import CenterView from '../CenterView';
+import { Button, CenterView } from '../../components'
+
+const ToLoadingButton = () => {
+  const [loading, setLoading] = useState(false)
+
+  const handlePress = () => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000)
+  }
+
+  return (
+    <Button loading={loading} onPress={handlePress}>Test Loading</Button>
+  )
+}
 
 storiesOf('Button', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
@@ -58,4 +72,18 @@ storiesOf('Button', module)
         Label
       </Button>
     </View>
+  ))
+
+  .add('With Icon', () => (
+    <View>
+      <Button iconName='happy'>Label</Button>
+    </View>
+
+  ))
+
+  .add('Loading', () => (
+    <View style={{ width: 200 }}>
+      <ToLoadingButton />
+    </View>
+
   ))

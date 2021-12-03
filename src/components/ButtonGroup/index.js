@@ -4,13 +4,13 @@ import { View } from 'react-native'
 
 import { styles } from './buttonGroupStyles'
 
-const ButtonGroup = ({ 
+const ButtonGroup = ({
   direction,
   buttonOneProps,
   buttonTwoProps,
   buttonOneText,
   buttonTwoText
- }) => {
+}) => {
 
   const buttonOneCustomStyle = direction === 'horizontal' ? styles.horizontalButtonOne : styles.verticalButtonOne
   const buttonTwoCustomStyle = direction === 'horizontal' ? styles.horizontalButtonTwo : styles.verticalButtonTwo
@@ -22,5 +22,7 @@ const ButtonGroup = ({
     </View>
   )
 }
+
+
 
 export default ButtonGroup

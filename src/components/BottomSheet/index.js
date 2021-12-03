@@ -10,8 +10,8 @@ import types from '@theme/type'
 import { styles } from './bottomSheetStyles'
 import ButtonGroup from "../ButtonGroup";
 
-const BottomSheet = ({ 
-  visible, 
+const BottomSheet = ({
+  visible,
   onClose,
   title,
   children,
@@ -35,22 +35,24 @@ const BottomSheet = ({
         <View style={styles.innerCenter}>
           <Tile style={styles.tile}>
             <Text style={types.headingFour}>{title}</Text>
-              <View style={styles.content}>
+            <View style={styles.content}>
               {children}
-              </View>
-            <ButtonGroup
-              direction='vertical'
-              buttonOneProps={{
-                buttonType: 'primaryDefault',
-                ...buttonOneProps
-              }}
-              buttonTwoProps={{
-                buttonType: 'primaryOutline',
-                ...buttonTwoProps
-              }}
-              buttonOneText={buttonOneText}
-              buttonTwoText={buttonTwoText}
-            />
+            </View>
+            <View style={{ width: 'auto' }}>
+              <ButtonGroup
+                direction='vertical'
+                buttonOneProps={{
+                  buttonType: 'primaryDefault',
+                  ...buttonOneProps
+                }}
+                buttonTwoProps={{
+                  buttonType: 'primaryOutline',
+                  ...buttonTwoProps
+                }}
+                buttonOneText={buttonOneText}
+                buttonTwoText={buttonTwoText}
+              />
+            </View>
           </Tile>
         </View>
       </TouchableWithoutFeedback>
@@ -59,7 +61,7 @@ const BottomSheet = ({
 }
 
 BottomSheet.defaultProps = {
-  onButtonPress: () => {},
+  onButtonPress: () => { },
 }
 
 export default BottomSheet

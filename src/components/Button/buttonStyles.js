@@ -4,6 +4,7 @@ import colors from '@theme/color'
 
 const defaultArea = {
   minWidth: 64,
+  width: '100%',
   height: 32,
   borderRadius: 40,
   alignItems: 'center',
@@ -31,6 +32,11 @@ const defaultContent = {
   marginEnd: 24
 }
 
+const iconContent = {
+  marginStart: 24,
+  marginEnd: 8
+}
+
 
 export const buttonStyles = (buttonType) => {
   if (buttonType === 'primaryDefault') {
@@ -54,6 +60,10 @@ export const buttonStyles = (buttonType) => {
 }
 
 const primaryDefault = StyleSheet.create({
+  outerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
   area: {
     ...defaultArea,
     backgroundColor: colors.primary,
@@ -76,11 +86,18 @@ const primaryDefault = StyleSheet.create({
     ...defaultText,
   },
   content: {
-    ...defaultContent
+    ...defaultContent,
+  },
+  iconContent: {
+    ...iconContent
   }
 })
 
 const secondaryDefault = StyleSheet.create({
+  outerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
   area: {
     ...defaultArea,
     backgroundColor: colors.secondary,
@@ -103,11 +120,18 @@ const secondaryDefault = StyleSheet.create({
     ...defaultText
   },
   content: {
-    ...defaultContent
+    ...defaultContent,
+  },
+  iconContent: {
+    ...iconContent
   }
 })
 
 const primaryOutline = StyleSheet.create({
+  outerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  },
   area: {
     ...defaultArea,
     backgroundColor: colors.neutral,
@@ -138,11 +162,18 @@ const primaryOutline = StyleSheet.create({
     color: colors.primaryDull
   },
   content: {
-    ...defaultContent
+    ...defaultContent,
+  },
+  iconContent: {
+    ...iconContent
   }
 })
 
 const secondaryOutline = StyleSheet.create({
+  outerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  },
   area: {
     ...defaultArea,
     backgroundColor: colors.neutral,
@@ -173,11 +204,18 @@ const secondaryOutline = StyleSheet.create({
     color: colors.secondaryDull
   },
   content: {
-    ...defaultContent
+    ...defaultContent,
+  },
+  iconContent: {
+    ...iconContent
   }
 })
 
 const primaryText = StyleSheet.create({
+  outerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  },
   area: {
     ...defaultArea,
   },
@@ -200,11 +238,18 @@ const primaryText = StyleSheet.create({
     color: colors.primaryDull
   },
   content: {
-    ...defaultContent
+    ...defaultContent,
+  },
+  iconContent: {
+    ...iconContent
   }
 })
 
 const secondaryText = StyleSheet.create({
+  outerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  },
   area: {
     ...defaultArea,
   },
@@ -227,6 +272,9 @@ const secondaryText = StyleSheet.create({
     color: colors.secondaryDull
   },
   content: {
-    ...defaultContent
+    ...defaultContent,
+  },
+  iconContent: {
+    ...iconContent
   }
 })
