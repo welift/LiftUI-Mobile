@@ -14,8 +14,11 @@ const Button = ({
   children,
   loading,
   iconName,
-  buttonType
+  buttonType,
+  customStyle
 }) => {
+
+  console.log('customStyle', customStyle)
 
   const style = buttonStyles(buttonType)
 
@@ -25,16 +28,15 @@ const Button = ({
     return style.text
   }
 
+  const handleButtonStyle = (pressed, customStyle = null) => {
+    if(pressed) return [style.areaActive, customStyle]
+    if(disabled) return [style.areaDisabled, customStyle]
+    return [style.area, customStyle]
+  }
+
   return (
     <Pressable
-      style={({ pressed }) => {
-        if(pressed) {
-          return style.areaActive
-        } else if(disabled) {
-          return style.areaDisabled
-        }
-        return style.area
-      }}
+      style={({ pressed }) => handleButtonStyle(pressed, customStyle)}
       // className={`Button-${buttonClassName}`}
       disabled={disabled || loading}
       onPress={onPress}
@@ -42,8 +44,8 @@ const Button = ({
       data-loading={loading}
     // data-has-icon={!!icons?.[iconName]}
     >{({ pressed }) => (
-      <View style={style.content}>
-        <Text style={handleTextStyle(pressed)}>{children}</Text>
+      <View style={[style.content, customStyle?.buttonContent]}>
+        <Text style={[handleTextStyle(pressed), customStyle?.buttonText]}>{children}</Text>
         {/* {loading && <Spinner />}
           {(!loading && iconName) && <Icon name={iconName} />} */}
       </View>
