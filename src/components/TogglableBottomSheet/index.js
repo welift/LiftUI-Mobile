@@ -1,17 +1,13 @@
 import React, { useState, useRef } from "react";
 
-import { Modal as NativeModal, Text, View, Pressable, TouchableWithoutFeedback, Animated } from "react-native";
-
-import Tile from '../Tile'
+import { Text, View, Pressable, TouchableWithoutFeedback, Animated } from "react-native";
 import AnimatedTile from '../Tile/AnimatedTile'
-import Icon from "../Icon";
+import Icon from '../Icon'
+import Button from '../Button'
 
 import types from '@theme/type'
 
 import { styles } from './togglableBottomSheetStyles'
-import Button from "../Button";
-
-import * as Animatable from 'react-native-animatable'
 
 const TogglableBottomSheet = ({
   title,

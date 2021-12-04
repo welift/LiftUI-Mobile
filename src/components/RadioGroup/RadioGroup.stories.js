@@ -1,7 +1,6 @@
 import { storiesOf } from '@storybook/react-native';
 import React, { useState } from 'react';
-import { RadioGroup } from '../../components'
-import CenterView from '../CenterView';
+import { RadioGroup, CenterView } from '@src';
 import { Text, View } from 'react-native'
 
 const ConsoleRadioGroup = () => {

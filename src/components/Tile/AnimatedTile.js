@@ -1,6 +1,5 @@
 import React from 'react'
 import { Animated } from 'react-native'
-
 import { styles } from './tileStyles'
 
 const AnimatedTile = ({ children, width, height, padding, style }) => {

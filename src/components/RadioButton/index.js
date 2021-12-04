@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import Check from '../../icons/Check'
+import Icon from '../Icon'
 import { styles } from './radioButtonStyles'
 
 const RadioButton = ({
@@ -36,7 +36,7 @@ const RadioButton = ({
           {
             (isChecked) ? (
               <View style={styles.selected}>
-                <Check fill={styles.check.color} width={10} height={7} />
+                <Icon name='check' fill={styles.check.color} width={10} height={7} />
               </View>
             ) : (
               <View />
@@ -53,7 +53,7 @@ const RadioButton = ({
 
 RadioButton.defaultProps = {
   label: 'test',
-  onChange: () => { },
+  onPress: () => { },
   disabled: false,
 }
 

@@ -1,13 +1,13 @@
 import { storiesOf } from '@storybook/react-native';
-import React, { useState } from 'react';
-import { View, Text } from 'react-native';
-import { CenterView, TogglableBottomSheet } from '../../components';
+import React from 'react';
+import { Text } from 'react-native';
+import { CenterView, TogglableBottomSheet } from '@src';
 import types from '@theme/type'
 
 storiesOf('TogglableBottomSheet', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('default botomSheet', () => (
-    <TogglableBottomSheet 
+    <TogglableBottomSheet
       contentRight={
         <Text style={types.smallBody}>Hi</Text>
       }

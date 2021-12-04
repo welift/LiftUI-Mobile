@@ -1,14 +1,13 @@
 import React from "react";
 
 import { Modal as NativeModal, Text, View, Pressable } from "react-native";
-
 import Tile from '../Tile'
-import Icon from "../Icon";
+import Icon from '../Icon'
+import Button from '../Button'
 
 import types from '@theme/type'
 
 import { styles } from './modalStyles'
-import Button from "../Button";
 
 const Modal = ({
   visible,

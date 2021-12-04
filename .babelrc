@@ -14,7 +14,8 @@
         ],
         "alias": {
           "@theme": "./src/theme",
-          "@icons": "./src/icons"
+          "@icons": "./src/icons",
+          "@src": "./src"
         }
       }
     ]

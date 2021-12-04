@@ -1,8 +1,7 @@
 import { storiesOf } from '@storybook/react-native';
-import { action } from '@storybook/addon-actions';
 import React, { useState } from 'react';
 import { View } from 'react-native';
-import { CenterView, Modal, Button } from '../../components';
+import { CenterView, Modal, Button } from '@src';
 
 const StoryModal = () => {
   const [showModal, setShowModal] = useState(false)

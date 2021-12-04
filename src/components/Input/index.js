@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react"
 import { View, Text, TextInput, TouchableWithoutFeedback } from "react-native"
 import { styles } from './inputStyles'
-import Icon from "../../components/Icon"
+import Icon from '../Icon'
 import PropTypes from 'prop-types'
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable"
 
@@ -19,6 +19,7 @@ const Input = ({
   name,
   iconName,
   onIconPress,
+  formatter,
   ...rest
 }) => {
   const [value, setValue] = useState(defaultValue)
@@ -27,8 +28,8 @@ const Input = ({
 
   const handleChange = (e) => {
     e.preventDefault()
-    setValue(e.target.value)
-    onChange(e, value)
+    setValue(formatter(e.nativeEvent.text))
+    onChange(e.nativeEvent, formatter(e.nativeEvent.text), name)
   }
 
   const handleInputClick = () => {
@@ -111,6 +112,7 @@ const Input = ({
 Input.defaultProps = {
   onChange: () => { },
   onIconPress: () => { },
+  formatter: (value) => value,
   disabled: false,
   width: 200,
   touched: false

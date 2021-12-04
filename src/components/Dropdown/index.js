@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react"
 import { View, Text, TextInput, TouchableWithoutFeedback, Pressable, FlatList } from "react-native"
 import { styles } from './dropdownStyles'
 import PropTypes from 'prop-types'
-import Icon from "../../components/Icon"
+import Icon from '../Icon'
 
 const Dropdown = ({
   label,
@@ -35,13 +35,13 @@ const Dropdown = ({
   const [open, setIsOpen] = useState(false)
 
   const handleChange = (e) => {
-    setValue(e)
+    setValue(e.nativeEvent.text)
 
     // Search Functionality
-    const regex = new RegExp(`^${e}(.*)`, 'i')
+    const regex = new RegExp(`^${e.nativeEvent.text}(.*)`, 'i')
     const filteredObject = options.filter((val) => regex.test(val.label))
     setFilteredOptions(filteredObject)
-    onChange(e, value)
+    onChange(e, e.nativeEvent.text, name)
   }
 
   const handleInputClick = (e) => {
@@ -64,16 +64,17 @@ const Dropdown = ({
       setIsOpen(false)
       setIsFocused(false)
       setSelectedValue(defaultSelectedValue)
+      onChange(null, null, name)
       setValue('')
     } else {
       setSelectedValue(item)
       setValue(item.label)
       setIsFocused(false)
-      onChange({ target: { name: name, value: item.value } })
+      onChange({ target: { name: name, value: item.value } }, item.value, name)
     }
     inputRef.current.blur()
     setIsOpen(false)
-    onOptionClick(item)
+    onOptionClick(item, item.value, name)
   }
 
   const createDynamicDropdownItem = (item, index) => (
@@ -136,7 +137,7 @@ const Dropdown = ({
                 onPressIn={handleInputClick}
                 editable={!disabled}
                 placeholder={placeholder}
-                onChangeText={handleChange}
+                onChange={handleChange}
                 maxLength={maxLength}
                 autoComplete="nope"
                 value={value}
@@ -160,11 +161,11 @@ const Dropdown = ({
           />
         )
       }
-      {/* {
+      {
         (hasError) && (
           <Text style={styles.errorText}>{error}</Text>
         )
-      } */}
+      }
     </View>
   )
 }
