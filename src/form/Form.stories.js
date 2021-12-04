@@ -62,8 +62,6 @@ const UsingForm = () => {
         options={options}
         onOptionClick={setFormValue}
         error={getError('lifterCount')}
-        searchValue='1'
-        selected={{ label: '1', value: 1, selected: true }}
       />
     </FormProvider>
   )

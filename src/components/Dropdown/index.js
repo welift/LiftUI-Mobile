@@ -38,7 +38,7 @@ const Dropdown = ({
     setValue(e.nativeEvent.text)
 
     // Search Functionality
-    const regex = new RegExp(`^${e}(.*)`, 'i')
+    const regex = new RegExp(`^${e.nativeEvent.text}(.*)`, 'i')
     const filteredObject = options.filter((val) => regex.test(val.label))
     setFilteredOptions(filteredObject)
     onChange(e, e.nativeEvent.text, name)
@@ -137,7 +137,7 @@ const Dropdown = ({
                 onPressIn={handleInputClick}
                 editable={!disabled}
                 placeholder={placeholder}
-                onChangeText={handleChange}
+                onChange={handleChange}
                 maxLength={maxLength}
                 autoComplete="nope"
                 value={value}
