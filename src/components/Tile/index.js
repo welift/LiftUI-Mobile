@@ -1,6 +1,5 @@
 import React from 'react'
 import { View } from 'react-native'
-
 import { styles } from './tileStyles'
 
 const Tile = ({ children, width, height, padding, style }) => {

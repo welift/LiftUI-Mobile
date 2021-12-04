@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react"
 import { View, Text, TextInput, TouchableWithoutFeedback } from "react-native"
 import { styles } from './inputStyles'
-import Icon from "../../components/Icon"
+import Icon from '../Icon'
 import PropTypes from 'prop-types'
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable"
 

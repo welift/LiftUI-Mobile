@@ -1,9 +1,8 @@
-import React, { Children } from "react";
+import React from "react";
 import { View, Text } from 'react-native'
 import { styles } from './infoCardStyles'
-
-import Tile from "../Tile";
-import Line from "../Line";
+import Tile from '../Tile'
+import Line from '../Line'
 
 const InfoCard = ({ children, headerLeft, headerRight }) => {
   const spreadChildren = children?.length > 0 ? children : [children]
@@ -11,16 +10,16 @@ const InfoCard = ({ children, headerLeft, headerRight }) => {
   const renderChild = (child, index) => (
     <View key={index}>
       <View style={styles.content}>
-        {child} 
+        {child}
       </View>
       <View style={styles.line}>
-      {index !== spreadChildren.length - 1 && <Line lineType='bold' />}
+        {index !== spreadChildren.length - 1 && <Line lineType='bold' />}
       </View>
     </View>
   )
 
   const renderChildren = spreadChildren?.map((child, index) => renderChild(child, index))
-  
+
   return (
     <Tile padding={0} style={{ marginBottom: 22 }}>
       <View style={styles.headerRow}>

@@ -1,14 +1,12 @@
 import React from "react";
 
-import { Modal as NativeModal, Text, View, Pressable, TouchableWithoutFeedback } from "react-native";
-
+import { Modal as NativeModal, Text, View, TouchableWithoutFeedback } from "react-native";
 import Tile from '../Tile'
-import Icon from "../Icon";
+import ButtonGroup from "../ButtonGroup";
 
 import types from '@theme/type'
 
 import { styles } from './bottomSheetStyles'
-import ButtonGroup from "../ButtonGroup";
 
 const BottomSheet = ({
   visible,

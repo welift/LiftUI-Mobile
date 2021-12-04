@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import Check from '../../icons/Check'
+import Icon from '../Icon'
 import { styles } from './checkboxStyles'
 
 const Checkbox = ({
@@ -30,7 +30,7 @@ const Checkbox = ({
           {
             (isChecked) ? (
               <View style={styles.selected}>
-                <Check fill='#FFFFFF' width={10} height={7} />
+                <Icon name='check' fill='#FFFFFF' width={10} height={7} />
               </View>
             ) : (
               <View />

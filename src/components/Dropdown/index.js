@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react"
 import { View, Text, TextInput, TouchableWithoutFeedback, Pressable, FlatList } from "react-native"
 import { styles } from './dropdownStyles'
 import PropTypes from 'prop-types'
-import Icon from "../../components/Icon"
+import Icon from '../Icon'
 
 const Dropdown = ({
   label,

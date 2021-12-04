@@ -1,7 +1,6 @@
 import React from 'react'
 import Button from '../Button'
 import { View } from 'react-native'
-
 import { styles } from './buttonGroupStyles'
 
 const ButtonGroup = ({
