@@ -72,6 +72,7 @@ export const styles = StyleSheet.create({
   },
   errorText: {
     ...types.label,
+    marginStart: 16,
     fontSize: 10,
     lineHeight: 10,
     marginTop: 4,

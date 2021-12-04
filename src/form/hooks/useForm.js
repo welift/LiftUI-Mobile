@@ -10,10 +10,7 @@ export const useForm = ({ constraints }) => {
 
   const [formValues, setFormValues] = useState(value)
 
-  const setFormValue = (e) => {
-    const name = e?.target?.name
-    const value = e?.target?.value
-
+  const setFormValue = (e, value, name) => {
     setFormValues(currValues => ({
       ...currValues,
       [name]: value === '' ? undefined : value,

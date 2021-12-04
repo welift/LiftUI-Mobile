@@ -35,13 +35,13 @@ const Dropdown = ({
   const [open, setIsOpen] = useState(false)
 
   const handleChange = (e) => {
-    setValue(e)
+    setValue(e.nativeEvent.text)
 
     // Search Functionality
     const regex = new RegExp(`^${e}(.*)`, 'i')
     const filteredObject = options.filter((val) => regex.test(val.label))
     setFilteredOptions(filteredObject)
-    onChange(e, value)
+    onChange(e, e.nativeEvent.text, name)
   }
 
   const handleInputClick = (e) => {
@@ -64,16 +64,17 @@ const Dropdown = ({
       setIsOpen(false)
       setIsFocused(false)
       setSelectedValue(defaultSelectedValue)
+      onChange(null, null, name)
       setValue('')
     } else {
       setSelectedValue(item)
       setValue(item.label)
       setIsFocused(false)
-      onChange({ target: { name: name, value: item.value } })
+      onChange({ target: { name: name, value: item.value } }, item.value, name)
     }
     inputRef.current.blur()
     setIsOpen(false)
-    onOptionClick(item)
+    onOptionClick(item, item.value, name)
   }
 
   const createDynamicDropdownItem = (item, index) => (
@@ -160,11 +161,11 @@ const Dropdown = ({
           />
         )
       }
-      {/* {
+      {
         (hasError) && (
           <Text style={styles.errorText}>{error}</Text>
         )
-      } */}
+      }
     </View>
   )
 }
