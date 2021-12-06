@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, Pressable } from 'react-native'
 import Icon from '../Icon'
+import Spinner from '../Spinner'
 import { buttonStyles } from './buttonStyles'
 
 const Button = ({
@@ -40,7 +41,7 @@ const Button = ({
       <View style={style.outerContainer}>
         <View style={[iconName ? style.iconContent : style.content, customStyle?.buttonContent]}>
           {!loading && <Text style={[handleTextStyle(pressed), customStyle?.buttonText]}>{children}</Text>}
-          {loading && <View style={{ marginStart: 16, marginEnd: 16 }}><Icon name='loading' width={16} height={16} fill='#FFFFFF' /></View>}
+          {loading && <View style={{ marginStart: 16, marginEnd: 16 }}><Spinner size={16} color={style.iconColor.color} /></View>}
         </View>
         {
           (iconName && (!loading)) && (
