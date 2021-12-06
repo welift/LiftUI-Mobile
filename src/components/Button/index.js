@@ -46,7 +46,7 @@ const Button = ({
         {
           (iconName && (!loading)) && (
             <View style={{ marginEnd: 16 }} >
-              <Icon name={iconName} width={16} height={16} fill='#FFFFFF' />
+              <Icon name={iconName} width={16} height={16} fill={style.iconColor.color} />
             </View>
           )
         }
