@@ -47,6 +47,7 @@ const UsingForm = () => {
         value={formValues?.['phoneNumber']}
         hint='Phone Number'
         formatter={formatPhoneNumber}
+        keyboardType='phone-pad'
         error={getError('phoneNumber')}
       />
       <Input
