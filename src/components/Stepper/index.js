@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Animated, TouchableWithoutFeedback, View } from 'react-native'
 import { stepStyles } from './stepperStyles'
 import PropTypes from 'prop-types'
@@ -72,19 +72,16 @@ const StepContainer = ({
 
   // Create all the dots inside a container
   const generateAllSteps = () => {
-    let steps = []
-    for (let position = 0; position < stepCount; position++) {
-      steps.push(
-        <TouchableWithoutFeedback
-          key={position}
-          onPress={() => handleStepPress(position)}
-        >
-          <View style={{ flexDirection: 'row' }}>
-            {generateStep(position)}
-          </View>
-        </TouchableWithoutFeedback>
-      )
-    }
+    let steps = [...Array(stepCount).keys()].map(position => (
+      <TouchableWithoutFeedback
+        key={position}
+        onPress={() => handleStepPress(position)}
+      >
+        <View style={{ flexDirection: 'row' }}>
+          {generateStep(position)}
+        </View>
+      </TouchableWithoutFeedback>
+    ))
 
     return (
       <View style={[stepStyles.indicatorContainer, { height: 16 }]}>
@@ -94,8 +91,8 @@ const StepContainer = ({
   }
 
   // Setup Animation
-  const sizeAnimation = React.useRef(new Animated.Value(12)).current
-  const borderRadiusAnimation = React.useRef(new Animated.Value(6)).current
+  const sizeAnimation = useRef(new Animated.Value(12)).current
+  const borderRadiusAnimation = useRef(new Animated.Value(6)).current
 
   useEffect(() => {
     // Animate on currentPosition change
