@@ -15,5 +15,6 @@ export { default as TogglableBottomSheet } from './components/TogglableBottomShe
 export { default as InfoCard } from './components/InfoCard'
 export { default as Link } from './components/Link'
 export { default as FormProvider } from './form/FormProvider'
+export { default as Stepper } from './components/Stepper'
 export { useForm } from './form/hooks/useForm'
 export { getConstraints, formatPhoneNumber } from './validation'
