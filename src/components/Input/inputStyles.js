@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Platform } from 'react-native'
 import colors from '@theme/color'
 import types from '@theme/type'
 
@@ -44,8 +44,9 @@ export const styles = StyleSheet.create({
     marginBottom: 2,
     paddingLeft: 16,
   },
-  input: (disabled, hasError, width, iconName) => {
+  input: (disabled, hasError, width, iconName, label) => {
     let textColor = colors.secondary
+    let topMargin
 
     if (disabled)
       textColor = colors.basicLight
@@ -53,11 +54,17 @@ export const styles = StyleSheet.create({
     if (hasError)
       textColor = colors.primary
 
+    if (label) {
+      topMargin = 4
+    } else {
+      topMargin = (Platform.OS === 'ios') ? 4 : 0
+    }
+
     return {
       ...types.label,
       fontSize: 16,
       height: 24,
-      marginTop: 4,
+      marginTop: topMargin,
       color: textColor,
       maxWidth: iconName ? width - 60 : '100%',
       minWidth: iconName ? width - 60 : '100%'
