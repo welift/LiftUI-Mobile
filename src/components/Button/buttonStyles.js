@@ -37,6 +37,10 @@ const iconContent = {
   marginEnd: 8
 }
 
+const iconColor = {
+  color: colors.neutral
+}
+
 
 export const buttonStyles = (buttonType) => {
   if (buttonType === 'primaryDefault') {
@@ -90,6 +94,9 @@ const primaryDefault = StyleSheet.create({
   },
   iconContent: {
     ...iconContent
+  },
+  iconColor: {
+    ...iconColor
   }
 })
 
@@ -124,6 +131,9 @@ const secondaryDefault = StyleSheet.create({
   },
   iconContent: {
     ...iconContent
+  },
+  iconColor: {
+    ...iconColor
   }
 })
 
@@ -166,6 +176,9 @@ const primaryOutline = StyleSheet.create({
   },
   iconContent: {
     ...iconContent
+  },
+  iconColor: {
+    ...iconColor
   }
 })
 
@@ -208,6 +221,9 @@ const secondaryOutline = StyleSheet.create({
   },
   iconContent: {
     ...iconContent
+  },
+  iconColor: {
+    ...iconColor
   }
 })
 
@@ -242,6 +258,9 @@ const primaryText = StyleSheet.create({
   },
   iconContent: {
     ...iconContent
+  },
+  iconColor: {
+    ...iconColor
   }
 })
 
@@ -276,5 +295,8 @@ const secondaryText = StyleSheet.create({
   },
   iconContent: {
     ...iconContent
+  },
+  iconColor: {
+    ...iconColor
   }
 })
