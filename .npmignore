@@ -12,4 +12,8 @@ App.js
 app.json
 .buckconfig
 .gitattributes
+.expo
+.eslintrc
+jsconfig.json
+react-native.config.js
 yarn-error.log
