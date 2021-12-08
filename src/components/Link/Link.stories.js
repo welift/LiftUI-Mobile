@@ -7,3 +7,6 @@ storiesOf('Link', module)
   .add('default', () => (
     <Link label='Label' href='https://google.com' />
   ))
+  .add('onPress', () => (
+    <Link label='Label' onPress={() => console.log('pressed')} />
+  ))

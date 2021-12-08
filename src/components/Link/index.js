@@ -4,11 +4,14 @@ import { styles } from "./linkStyles"
 
 const Link = ({
   label,
-  href
+  href,
+  onPress
 }) => {
+
+  const handlePress = !href ? onPress : () => Linking.openURL(href)
   return (
     <View style={styles.container}>
-      <Text style={styles.link} onPress={() => Linking.openURL(href)}>{label}</Text>
+      <Text style={styles.link} onPress={handlePress}>{label}</Text>
     </View>
   )
 }
