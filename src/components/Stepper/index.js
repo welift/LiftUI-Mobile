@@ -19,7 +19,7 @@ const Stepper = ({
   }, [currentPosition])
 
   return (
-    <View style={{ width: stepCount * 24 }}>
+    <View style={{ width: (stepCount * 24) + (stepCount * 12) }}>
       <StepContainer
         currentPosition={position}
         stepCount={stepCount}
