@@ -187,7 +187,7 @@ Dropdown.propTypes = {
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
   label: PropTypes.string,
-  width: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   maxLength: PropTypes.number,
   error: PropTypes.string,
   defaultValue: PropTypes.string,
