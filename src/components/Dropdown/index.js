@@ -39,7 +39,7 @@ const Dropdown = ({
 
     // Search Functionality
     const regex = new RegExp(`^${e.nativeEvent.text}(.*)`, 'i')
-    const filteredObject = options.filter((val) => regex.test(val.label))
+    const filteredObject = options?.filter((val) => regex.test(val.label))
     setFilteredOptions(filteredObject)
     onChange(e, e.nativeEvent.text, name)
   }
