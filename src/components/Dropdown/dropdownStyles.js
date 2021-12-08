@@ -24,9 +24,9 @@ export const styles = StyleSheet.create({
     width: '100%'
   },
   iconContainer: {
-    width: 45,
+    width: 36,
     justifyContent: 'center',
-    alignItems: 'center'
+    paddingLeft: 14
   },
   optionsContainer: (width, label) => {
     return {
