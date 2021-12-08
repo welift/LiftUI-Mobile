@@ -125,7 +125,7 @@ const Dropdown = ({
           onBlur={handleInputClickOut}
         >
           <View style={styles.container}>
-            <View>
+            <View style={{ flex: 1 }}>
               {
                 (label) && (
                   <Text style={styles.label(hasError, disabled)}>{label}</Text>
@@ -140,7 +140,6 @@ const Dropdown = ({
                 placeholder={placeholder}
                 onChange={handleChange}
                 maxLength={maxLength}
-                autoComplete="nope"
                 value={value}
                 placeholderTextColor={styles.input(disabled, hasError, width).color}
                 {...rest}
@@ -174,7 +173,7 @@ const Dropdown = ({
 Dropdown.defaultProps = {
   onChange: () => { },
   disabled: false,
-  width: 200,
+  width: '100%',
   touched: false,
   selected: { key: null, label: null, value: null, selected: false },
   zeroStateText: 'No available options',
@@ -188,7 +187,7 @@ Dropdown.propTypes = {
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
   label: PropTypes.string,
-  width: PropTypes.number,
+  width: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
   maxLength: PropTypes.number,
   error: PropTypes.string,
   defaultValue: PropTypes.string,

@@ -8,11 +8,11 @@ const baseBorder = (label) => ({
   borderColor: colors.secondaryLight,
   height: (label) ? 60 : 48,
   minWidth: 200,
-  width: 200,
+  width: '100%',
   paddingTop: 12,
   paddingLeft: 16,
-  paddingRight: 16,
   paddingBottom: 8,
+  paddingRight: 8,
   justifyContent: 'center',
   backgroundColor: colors.neutral
 })
@@ -24,7 +24,9 @@ export const styles = StyleSheet.create({
     width: '100%'
   },
   iconContainer: {
-    justifyContent: 'center'
+    width: 45,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   optionsContainer: (width, label) => {
     return {
@@ -35,6 +37,7 @@ export const styles = StyleSheet.create({
       zIndex: 5,
       elevation: 5,
       width: width,
+      minWidth: 200,
       borderBottomLeftRadius: 10,
       borderBottomRightRadius: 10,
       shadowColor: '#997659',
@@ -101,8 +104,6 @@ export const styles = StyleSheet.create({
       height: 24,
       marginTop: 4,
       color: textColor,
-      maxWidth: width - 100,
-      minWidth: width - 100
     }
   },
   label: (hasError, disabled) => {
