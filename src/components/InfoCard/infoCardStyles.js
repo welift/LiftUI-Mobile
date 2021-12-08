@@ -1,6 +1,4 @@
-import { StyleSheet } from "react-native";
-
-import colors from '@theme/color'
+import colors from '../../theme/color'
 
 export const styles = {
   headerRow: {

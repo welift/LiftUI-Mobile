@@ -1,4 +1,4 @@
-import colors from '@theme/color'
+import colors from '../../theme/color'
 import { StyleSheet } from 'react-native'
 
 export const stepStyles = StyleSheet.create({

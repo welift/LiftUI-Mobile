@@ -1,7 +1,7 @@
 import React from 'react'
 import { Animated } from 'react-native'
 import Icon from '../Icon'
-import colors from '@theme/color'
+import colors from '../../theme/color'
 
 const Spinner = ({
   size,

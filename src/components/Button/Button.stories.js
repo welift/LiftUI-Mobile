@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react-native';
 import React, { useState } from 'react';
 import { Text, View } from 'react-native';
-import { Button, CenterView } from '@src'
+import { Button, CenterView } from '../../../src'
 
 const ToLoadingButton = () => {
   const [loading, setLoading] = useState(false)

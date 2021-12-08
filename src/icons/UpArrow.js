@@ -1,6 +1,6 @@
 import React from "react"
 import Svg, { G, Path, Defs, ClipPath } from "react-native-svg"
-import colors from '@theme/color'
+import colors from '../theme/color'
 
 const UpArrow = (props) => {
   const { fill, ...rest } = props

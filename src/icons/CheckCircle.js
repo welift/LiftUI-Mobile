@@ -1,6 +1,6 @@
 import React from "react"
 import Svg, { Path } from "react-native-svg"
-import colors from '@theme/color'
+import colors from '../theme/color'
 
 const CheckCircle = (props) => {
   const { fill, ...rest } = props

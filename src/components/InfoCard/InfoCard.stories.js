@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import { Text, View } from 'react-native';
-import { InfoCard, CenterView } from '@src';
+import { InfoCard, CenterView } from '../../../src';
 
 storiesOf('InfoCard', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)

@@ -5,7 +5,7 @@ import AnimatedTile from '../Tile/AnimatedTile'
 import Icon from '../Icon'
 import Button from '../Button'
 
-import types from '@theme/type'
+import types from '../../theme/type'
 
 import { styles } from './togglableBottomSheetStyles'
 

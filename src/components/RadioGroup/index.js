@@ -26,9 +26,9 @@ const RadioGroup = ({
 
   return (
     <View style={{ flexDirection: direction }}>
-      {buttons && buttons.map((option) => (
-        <RadioButton style={{ paddingLeft: buttonPadding, paddingRight: buttonPadding }} onPress={handleOnChange} label={option.label} selected={option.selected} value={option.value} />
-      ))
+      {buttons ? buttons.map((option, index) => (
+        <RadioButton key={index} style={{ paddingLeft: buttonPadding, paddingRight: buttonPadding }} onPress={handleOnChange} label={option.label} selected={option.selected} value={option.value} />
+      )) : null
       }
     </View>
   )

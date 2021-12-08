@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react-native';
 import React, { useState, useEffect } from 'react';
 import { View } from 'react-native'
-import { Stepper, CenterView, Button } from '@src';
+import { Stepper, CenterView, Button } from '../../../src';
 
 const StepperExample = () => {
   const pages = [

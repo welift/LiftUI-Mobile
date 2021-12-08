@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react-native';
 import React, { useState } from 'react';
 import { View, Text } from 'react-native';
-import { CenterView, BottomSheet, Button } from '@src';
+import { CenterView, BottomSheet, Button } from '../../../src';
 
 const StoryBottomSheet = () => {
   const [showBottomSheet, setShowBottomSheet] = useState(false)
