@@ -6,5 +6,8 @@ import { Dropdown, CenterView } from '../../../src';
 storiesOf('Dropdown', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('Default', () => (
-    <Dropdown placeholder='Placeholder' width={300} label='test' style={{ zIndex: 6, elevation: 6 }} />
+    <View style={{ width: 283 }}>
+      <Dropdown placeholder='Placeholder' label='test' style={{ zIndex: 6, elevation: 6 }} />
+    </View>
+
   ))

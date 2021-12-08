@@ -8,7 +8,7 @@ const baseBorder = (label) => ({
   borderColor: colors.secondaryLight,
   height: label ? 60 : 48,
   minWidth: 200,
-  width: 200,
+  width: '100%',
   paddingTop: 12,
   paddingLeft: 16,
   paddingRight: 16,
@@ -24,7 +24,9 @@ export const styles = StyleSheet.create({
     width: '100%'
   },
   iconContainer: {
-    justifyContent: 'center'
+    width: 30,
+    justifyContent: 'center',
+    paddingLeft: 14
   },
   errorText: {
     ...types.label,
@@ -61,10 +63,9 @@ export const styles = StyleSheet.create({
       ...types.label,
       fontSize: 16,
       height: 24,
+      padding: 0,
       marginTop: topMargin,
       color: textColor,
-      maxWidth: iconName ? width - 60 : '100%',
-      minWidth: iconName ? width - 60 : '100%'
     }
   },
   label: (hasError, disabled) => {

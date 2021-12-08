@@ -6,7 +6,7 @@ import { Input, CenterView } from '../../../src';
 storiesOf('Input', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('Default', () => (
-    <View>
+    <View style={{ width: 300 }}>
       <Input placeholder='Placeholder' />
       <Input />
     </View>
