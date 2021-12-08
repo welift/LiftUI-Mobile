@@ -2,12 +2,11 @@ import { StyleSheet } from 'react-native'
 import colors from '../../theme/color'
 import types from '../../theme/type'
 
-const baseBorder = {
+const baseBorder = (label) => ({
   borderWidth: 1,
   borderRadius: 10,
   borderColor: colors.secondaryLight,
-  height: 60,
-  maxWidth: '90%',
+  height: (label) ? 60 : 48,
   minWidth: 200,
   width: 200,
   paddingTop: 12,
@@ -16,7 +15,7 @@ const baseBorder = {
   paddingBottom: 8,
   justifyContent: 'center',
   backgroundColor: colors.neutral
-}
+})
 
 export const styles = StyleSheet.create({
   container: {
@@ -27,10 +26,10 @@ export const styles = StyleSheet.create({
   iconContainer: {
     justifyContent: 'center'
   },
-  optionsContainer: (width) => {
+  optionsContainer: (width, label) => {
     return {
       position: 'absolute',
-      top: 60,
+      top: label ? 60 : 48,
       minHeight: 16,
       backgroundColor: colors.neutral,
       zIndex: 5,
@@ -124,10 +123,10 @@ export const styles = StyleSheet.create({
       color: colors.secondary,
     }
   },
-  border: (hasFocus, disabled, value, hasError, width) => {
+  border: (hasFocus, disabled, value, hasError, width, label) => {
     if (hasError) {
       return {
-        ...baseBorder,
+        ...baseBorder(label),
         borderColor: colors.primary,
         width: width
       }
@@ -135,7 +134,7 @@ export const styles = StyleSheet.create({
 
     if (disabled) {
       return {
-        ...baseBorder,
+        ...baseBorder(label),
         borderColor: colors.basicLight,
         backgroundColor: colors.secondaryLight,
         width: width
@@ -144,7 +143,7 @@ export const styles = StyleSheet.create({
 
     if (hasFocus) {
       return {
-        ...baseBorder,
+        ...baseBorder(label),
         borderColor: colors.accentSoft,
         width: width,
         borderBottomLeftRadius: 0,
@@ -154,7 +153,7 @@ export const styles = StyleSheet.create({
     }
 
     return {
-      ...baseBorder,
+      ...baseBorder(label),
       width: width
     }
   }

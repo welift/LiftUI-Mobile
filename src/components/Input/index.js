@@ -20,6 +20,7 @@ const Input = ({
   iconName,
   onIconPress,
   formatter,
+  marginBottom,
   ...rest
 }) => {
   const [value, setValue] = useState(defaultValue)
@@ -48,7 +49,7 @@ const Input = ({
   const hasError = error?.length > 0 && isTouched
 
   return (
-    <View>
+    <View style={{ marginBottom: (hasError || hint) ? 12 : marginBottom }}>
       <View
         style={
           styles.border(
@@ -56,7 +57,8 @@ const Input = ({
             disabled,
             value,
             hasError,
-            width)}
+            width,
+            label)}
       >
         <TouchableWithoutFeedback
           onPressIn={handleInputClick}
@@ -115,7 +117,8 @@ Input.defaultProps = {
   formatter: (value) => value,
   disabled: false,
   width: 200,
-  touched: false
+  touched: false,
+  marginBottom: 24
 }
 
 Input.propTypes = {
