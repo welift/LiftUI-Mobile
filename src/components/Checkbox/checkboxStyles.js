@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native"
 
 import colors from '../../theme/color';
-import types from '../../type'
+import types from '../../theme/type'
 
 const baseBoxView = {
   width: 14,
