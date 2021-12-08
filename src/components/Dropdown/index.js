@@ -117,7 +117,8 @@ const Dropdown = ({
             disabled,
             value,
             hasError,
-            width)}
+            width,
+            label)}
       >
         <TouchableWithoutFeedback
           onPressIn={handleInputClick}
@@ -154,7 +155,7 @@ const Dropdown = ({
       {
         (open) && (
           <FlatList
-            style={styles.optionsContainer(width)}
+            style={styles.optionsContainer(width, label)}
             data={isDynamic ? options : filterdOptions}
             renderItem={({ item, index }) => isDynamic ? createDynamicDropdownItem(item, index) : createDropdownItem(item, index)}
             ListEmptyComponent={createZeroStateText}
