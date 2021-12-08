@@ -11,7 +11,7 @@ const baseBorder = (label) => ({
   width: '100%',
   paddingTop: 12,
   paddingLeft: 16,
-  paddingRight: 8,
+  paddingRight: 16,
   paddingBottom: 8,
   justifyContent: 'center',
   backgroundColor: colors.neutral
@@ -24,9 +24,9 @@ export const styles = StyleSheet.create({
     width: '100%'
   },
   iconContainer: {
-    width: 45,
+    width: 30,
     justifyContent: 'center',
-    alignItems: 'center'
+    paddingLeft: 14
   },
   errorText: {
     ...types.label,
