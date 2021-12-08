@@ -5,7 +5,7 @@ import Tile from '../Tile'
 import Icon from '../Icon'
 import Button from '../Button'
 
-import types from '@theme/type'
+import types from '../../theme/type'
 
 import { styles } from './modalStyles'
 

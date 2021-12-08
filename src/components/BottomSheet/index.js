@@ -4,7 +4,7 @@ import { Modal as NativeModal, Text, View, TouchableWithoutFeedback } from "reac
 import Tile from '../Tile'
 import ButtonGroup from "../ButtonGroup";
 
-import types from '@theme/type'
+import types from '../../theme/type'
 
 import { styles } from './bottomSheetStyles'
 

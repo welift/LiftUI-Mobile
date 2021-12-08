@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
-import colors from '@theme/color'
-import types from '@theme/type'
+import colors from '../../theme/color'
+import types from '../../theme/type'
 
 const baseBorder = {
   borderWidth: 1,
