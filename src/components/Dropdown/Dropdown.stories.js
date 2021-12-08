@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import { View } from 'react-native'
-import { Dropdown, CenterView } from '@src';
+import { Dropdown, CenterView } from '../../../src';
 
 storiesOf('Dropdown', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)

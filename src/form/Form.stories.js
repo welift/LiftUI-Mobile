@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
-import { Input, Dropdown, CenterView, FormProvider, useForm, formatPhoneNumber } from '@src'
+import { Input, Dropdown, CenterView, FormProvider, useForm, formatPhoneNumber } from '../../../src'
 
 const UsingForm = () => {
   const { setFormValue, formValues, getError, formIsValid } = useForm({ constraints: ['email', 'firstName', 'lastName', 'lifterCount', 'phoneNumber'] })

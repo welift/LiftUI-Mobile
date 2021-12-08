@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import { View } from 'react-native'
-import { ButtonGroup, CenterView } from '@src'
+import { ButtonGroup, CenterView } from '../../../src'
 
 storiesOf('ButtonGroup', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)

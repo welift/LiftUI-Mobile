@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import { Text } from 'react-native';
-import { Tabs, CenterView } from '@src';
+import { Tabs, CenterView } from '../../../src';
 
 const StoryTabs = () => {
   const fakeTabs = [

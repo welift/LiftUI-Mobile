@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
-import { Line, CenterView } from '@src'
+import { Line, CenterView } from '../../../src'
 
 storiesOf('Line', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)

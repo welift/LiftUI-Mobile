@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
-import { Icon, CenterView } from '@src'
+import { Icon, CenterView } from '../../../src'
 import { View } from 'react-native';
 import colors from '../../theme/color'
 

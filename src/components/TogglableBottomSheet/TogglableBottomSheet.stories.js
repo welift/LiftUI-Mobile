@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import { Text } from 'react-native';
-import { CenterView, TogglableBottomSheet } from '@src';
+import { CenterView, TogglableBottomSheet } from '../../../src';
 import types from '../../theme/type'
 
 storiesOf('TogglableBottomSheet', module)
