@@ -189,7 +189,7 @@ Dropdown.propTypes = {
   label: PropTypes.string,
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   maxLength: PropTypes.number,
-  error: PropTypes.string,
+  error: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   defaultValue: PropTypes.string,
   hint: PropTypes.string,
   touched: PropTypes.bool,
