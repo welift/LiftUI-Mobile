@@ -69,7 +69,7 @@ const definedConstraints = {
   dob18: {
     datetime: {
       dateOnly: true,
-      latest: dayjs().subtract(17, 'years'),
+      latest: dayjs().subtract(17, 'year'),
       message: "^You must be 17 or older to become a lifter."
     }
   },
