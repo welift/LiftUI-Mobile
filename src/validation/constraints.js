@@ -66,7 +66,7 @@ const definedConstraints = {
     presence: true,
     datetime: true,
   },
-  dob18: {
+  dob17: {
     datetime: {
       dateOnly: true,
       latest: dayjs().subtract(17, 'year'),
