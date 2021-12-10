@@ -29,12 +29,18 @@ export const useForm = ({ constraints }) => {
 
   validate.validators.age = (value, options, key, attributes) => {
     const dateValue = dayjs(value)
+
+    if (options?.presence) {
+      if (!value)
+        return '^Birthday is required'
+    }
+
     if (options?.requiredAge) {
       if (dateValue < dayjs().subtract(options.requiredAge, 'year')) {
         return
       }
 
-      return 'You must be 17 or older to become a lifter'
+      return '^You must be 17 or older to become a lifter'
     }
   }
 
@@ -50,8 +56,6 @@ export const useForm = ({ constraints }) => {
   });
 
   const formConstraints = constraints ? getConstraints(constraints) : null
-
-  console.log('validating', validate({ dob17: '06/07/2003' }, getConstraints(['dob17'])))
 
   const formErrors = formConstraints ? validate(formValues, formConstraints) : null
 

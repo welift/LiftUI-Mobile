@@ -66,7 +66,8 @@ const definedConstraints = {
   },
   dob17: {
     age: {
-      requiredAge: 17
+      requiredAge: 17,
+      presence: true
     }
   },
   companyName: {
