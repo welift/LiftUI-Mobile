@@ -14,7 +14,13 @@ export const styles = {
     display: 'flex',
     justifyContent: "flex-start",
     height: 48,
-    width: '100%'
+    width: '100%',
+    shadowOffset: {
+      width: 0,
+      height: 10
+    },
+    shadowOpacity: .05,
+    shadowColor: '#997659'
   },
   tabs: {
     flex: 1,
