@@ -9,7 +9,7 @@ const baseBorder = (label) => ({
   height: (label) ? 60 : 48,
   minWidth: 200,
   width: '100%',
-  paddingTop: 12,
+  paddingTop: Platform.OS === 'android' ? 8 : 12,
   paddingLeft: 16,
   paddingBottom: 8,
   paddingRight: 8,
