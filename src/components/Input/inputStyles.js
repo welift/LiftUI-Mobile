@@ -1,4 +1,4 @@
-import { StyleSheet, Platform } from 'react-native'
+import { StyleSheet, Platform, Dimensions } from 'react-native'
 import colors from '../../theme/color'
 import types from '../../theme/type'
 
@@ -56,7 +56,7 @@ export const styles = StyleSheet.create({
     if (label) {
       topMargin = 4
     } else {
-      topMargin = (Platform.OS === 'ios') ? 4 : 0
+      topMargin = (Dimensions.get('screen') < 840) ? 0 : 4
     }
 
     return {
