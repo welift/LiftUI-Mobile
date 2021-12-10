@@ -1,5 +1,3 @@
-import dayjs from "dayjs"
-
 export const getConstraints = (constraintsArray) => {
   let constraints = {}
   if (constraintsArray) {
@@ -67,10 +65,8 @@ const definedConstraints = {
     datetime: true,
   },
   dob17: {
-    datetime: {
-      dateOnly: true,
-      latest: dayjs().subtract(17, 'year'),
-      message: "^You must be 17 or older to become a lifter."
+    age: {
+      requiredAge: 17
     }
   },
   companyName: {
