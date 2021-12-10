@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet } from 'react-native'
 import colors from '../../theme/color'
 import types from '../../theme/type'
 
@@ -102,8 +102,9 @@ export const styles = StyleSheet.create({
       ...types.label,
       fontSize: 16,
       height: 24,
-      marginTop: 4,
+      marginTop: Dimensions.get('screen').height < 840 ? 0 : 4,
       color: textColor,
+      padding: 0,
     }
   },
   label: (hasError, disabled) => {
