@@ -10,7 +10,10 @@ export const styles = StyleSheet.create({
     minWidth: (width !== null ? width : 346),
     minHeight: (height !== null ? height : 76),
     shadowOpacity: .15,
-    shadowRadius: 10,
+      shadowRadius: 4,
+      shadowOffset: {
+        height: 5
+      },
     padding: (padding !== null ? padding : 36)
   })
 })
