@@ -154,11 +154,11 @@ const Dropdown = ({
       {
         (open) && (
           <View style={styles.optionsContainer(width, label)}>
-            {(isDynamic) ? filterdOptions.map((item, index) => (
+            {(isDynamic) ? options.map((item, index) => (
               createDynamicDropdownItem(item, index)
             ))
               :
-              options.map((item, index) => (
+              filterdOptions.map((item, index) => (
                 createDropdownItem(item, index)
               ))
             }
