@@ -20,7 +20,8 @@ export const styles = {
       height: 10
     },
     shadowOpacity: .05,
-    shadowColor: '#997659'
+    shadowColor: '#997659',
+    zIndex: 10000
   },
   tabs: {
     flex: 1,
