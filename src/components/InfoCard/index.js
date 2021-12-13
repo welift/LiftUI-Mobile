@@ -21,7 +21,7 @@ const InfoCard = ({ children, headerLeft, headerRight }) => {
   const renderChildren = spreadChildren?.map((child, index) => renderChild(child, index))
 
   return (
-    <Tile padding={0} style={{ marginBottom: 22 }}>
+    <Tile padding={0} style={{ marginBottom: 24 }}>
       <View style={styles.headerRow}>
         <Text style={styles.headerText}>{headerLeft}</Text>
         <Text style={styles.headerText}>{headerRight}</Text>

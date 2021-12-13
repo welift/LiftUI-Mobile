@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import { Tabs, CenterView } from '../../../src';
 
 const StoryTabs = () => {
@@ -12,7 +12,9 @@ const StoryTabs = () => {
 
   return (
     <Tabs options={fakeTabs}>
-      <Text>Tab One</Text>
+      <View style={{ backgroundColor: 'red', height: '100%'}}>
+        <Text>Tab One</Text>
+      </View>
       <Text>Tab Two</Text>
       <Text>Tab Three</Text>
     </Tabs>

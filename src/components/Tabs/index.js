@@ -44,7 +44,7 @@ const Tabs = ({ options, children }) => {
         </View>
         <Animated.View style={styles.selected(minTabWidth, animatedMargin)} />
       </View>
-      <View>
+      <View style={{ height: '100%' }}>
         {children?.[selectionIndex]}
       </View>
     </View>
