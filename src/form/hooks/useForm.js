@@ -31,6 +31,9 @@ export const useForm = ({ constraints }) => {
   validate.validators.age = (value, options, key, attributes) => {
     const dateValue = dayjs(value, 'MM/DD/YYYY', true)
 
+    if (!dateValue.isValid())
+      return '^Please enter a valid date'
+
     if (options?.presence) {
       if (!value)
         return '^Birthday is required'
