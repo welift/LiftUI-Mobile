@@ -3,8 +3,9 @@ import validate from 'validate.js'
 import { getConstraints } from '../../validation/constraints'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
 dayjs.extend(utc)
-
+dayjs.extend(customParseFormat)
 import { FormContext } from '../FormProvider'
 
 export const useForm = ({ constraints }) => {
@@ -28,7 +29,7 @@ export const useForm = ({ constraints }) => {
   }
 
   validate.validators.age = (value, options, key, attributes) => {
-    const dateValue = dayjs(value)
+    const dateValue = dayjs(value, 'MM/DD/YYYY', true)
 
     if (options?.presence) {
       if (!value)
