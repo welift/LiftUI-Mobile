@@ -154,12 +154,16 @@ const Dropdown = ({
       {
         (open) && (
           <View style={styles.optionsContainer(width, label)}>
-            <FlatList
-              data={isDynamic ? options : filterdOptions}
-              renderItem={({ item, index }) => isDynamic ? createDynamicDropdownItem(item, index) : createDropdownItem(item, index)}
-              ListEmptyComponent={createZeroStateText}
-            />
+            {(isDynamic) ? filterdOptions.map((item, index) => (
+              createDynamicDropdownItem(item, index)
+            ))
+              :
+              options.map((item, index) => (
+                createDropdownItem(item, index)
+              ))
+            }
           </View>
+
         )
       }
       {
