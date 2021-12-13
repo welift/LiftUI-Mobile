@@ -4,7 +4,7 @@ import { styles } from './infoCardStyles'
 import Tile from '../Tile'
 import Line from '../Line'
 
-const InfoCard = ({ children, headerLeft, headerRight, styles }) => {
+const InfoCard = ({ children, headerLeft, headerRight, style }) => {
   const spreadChildren = children?.length > 0 ? children : [children]
 
   const renderChild = (child, index) => (
@@ -21,7 +21,7 @@ const InfoCard = ({ children, headerLeft, headerRight, styles }) => {
   const renderChildren = spreadChildren?.map((child, index) => renderChild(child, index))
 
   return (
-    <Tile padding={0} style={styles}>
+    <Tile padding={0} style={style}>
       <View style={styles.headerRow}>
         <Text style={styles.headerText}>{headerLeft}</Text>
         <Text style={styles.headerText}>{headerRight}</Text>
