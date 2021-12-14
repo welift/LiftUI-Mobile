@@ -15,7 +15,11 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
-    width: '100%'
+    width: '100%',
+    shadowOffset: {
+      height: -4
+    },
+    elevation: 10,
   },
   toggleTile: {
     borderRadius: 20,
@@ -24,7 +28,11 @@ export const styles = StyleSheet.create({
     paddingTop: 8,
     paddingLeft: 24,
     paddingRight: 24,
-    paddingBottom: 24
+    paddingBottom: 24,
+    shadowOffset: {
+      height: -4
+    },
+    elevation: 10,
   },
   topRow: {
     display: 'flex',
