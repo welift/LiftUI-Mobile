@@ -24,6 +24,7 @@ const Dropdown = ({
   zeroStateText,
   isDynamic,
   style,
+  textInputRef,
   ...rest
 }) => {
   const defaultSelectedValue = { key: null, label: null, value: null, selected: false }
@@ -76,6 +77,11 @@ const Dropdown = ({
     setIsOpen(false)
     onOptionClick(item, item.value, name)
   }
+  const createDynamicItems = () => {
+    return (options?.length > 0) ? options.map((item, index) => (
+      createDynamicDropdownItem(item, index)
+    )) : createZeroStateText()
+  }
 
   const createDynamicDropdownItem = (item, index) => (
     <DropdownItem
@@ -87,6 +93,12 @@ const Dropdown = ({
       selected={item.value === selectedValue.value}
     />
   )
+
+  const createDropDownItems = () => {
+    return (filterdOptions?.length > 0) ? filterdOptions.map((item, index) => (
+      createDropdownItem(item, index)
+    )) : createZeroStateText()
+  }
 
   const createDropdownItem = (item, index) => (
     <DropdownItem
@@ -105,7 +117,7 @@ const Dropdown = ({
     </View>
   )
 
-  const inputRef = useRef(null)
+  const inputRef = textInputRef ? textInputRef : useRef(null)
   const hasError = error?.length > 0 && isTouched
 
   return (
@@ -136,6 +148,7 @@ const Dropdown = ({
                 style={styles.input(disabled, hasError, width)}
                 name={name}
                 onPressIn={handleInputClick}
+                onFocus={handleInputClick}
                 editable={!disabled}
                 placeholder={placeholder}
                 onChange={handleChange}
@@ -154,16 +167,8 @@ const Dropdown = ({
       {
         (open) && (
           <View style={styles.optionsContainer(width, label)}>
-            {(isDynamic) ? options.map((item, index) => (
-              createDynamicDropdownItem(item, index)
-            ))
-              :
-              filterdOptions.map((item, index) => (
-                createDropdownItem(item, index)
-              ))
-            }
+            {(isDynamic) ? createDynamicItems() : createDropDownItems()}
           </View>
-
         )
       }
       {
