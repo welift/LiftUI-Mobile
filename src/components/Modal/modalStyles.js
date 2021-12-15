@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
   title: {
     textAlign: 'center',
     padding: 16,
+    paddingTop: 0
   },
   content: {
     textAlign: 'center',
