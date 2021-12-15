@@ -45,6 +45,11 @@ const Dropdown = ({
     onChange(e, e.nativeEvent.text, name)
   }
 
+  const handleFocus = () => {
+    setIsOpen(true)
+    setIsFocused(true)
+  }
+
   const handleInputClick = (e) => {
     e.preventDefault()
     if (inputRef) {
@@ -148,7 +153,7 @@ const Dropdown = ({
                 style={styles.input(disabled, hasError, width)}
                 name={name}
                 onPressIn={handleInputClick}
-                onFocus={handleInputClick}
+                onFocus={handleFocus}
                 editable={!disabled}
                 placeholder={placeholder}
                 onChange={handleChange}
