@@ -31,7 +31,7 @@ const Modal = ({
           <Pressable onPress={onClose}><Icon name='closeX' width={16} height={16} /></Pressable>
           <Text style={[types.headingThree, styles.title]}>{title}</Text>
           {children}
-          <View style={{ width: 'auto' }}>
+          <View style={{ width: 'auto', marginHorizontal: 16 }}>
             <Button onPress={onButtonPress}>{buttonText}</Button>
           </View>
         </Tile>
