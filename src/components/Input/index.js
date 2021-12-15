@@ -21,6 +21,7 @@ const Input = ({
   onIconPress,
   formatter,
   marginBottom,
+  textInputRef,
   ...rest
 }) => {
   const [value, setValue] = useState(defaultValue)
@@ -45,7 +46,7 @@ const Input = ({
     setTouched(true)
   }
 
-  const inputRef = useRef(null)
+  const inputRef = textInputRef ? textInputRef : useRef(null)
   const hasError = error?.length > 0 && isTouched
 
   return (
@@ -76,6 +77,7 @@ const Input = ({
                 style={styles.input(disabled, hasError, width, iconName, label)}
                 name={name}
                 onPressIn={handleInputClick}
+                onFocus={handleInputClick}
                 editable={!disabled}
                 placeholder={placeholder}
                 onChange={handleChange}
