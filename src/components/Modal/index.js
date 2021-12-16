@@ -16,6 +16,13 @@ const Modal = ({
   children,
   onButtonPress,
   buttonText,
+  singleButton,
+  multiButton,
+  buttonOneText,
+  buttonTwoText,
+  buttonOneProps,
+  buttonTwoProps,
+  buttonGroupProps,
   ...rest
 }) => {
   return (
@@ -32,7 +39,16 @@ const Modal = ({
           <Text style={[types.headingThree, styles.title]}>{title}</Text>
           {children}
           <View style={{ width: 'auto', marginHorizontal: 16 }}>
-            <Button onPress={onButtonPress}>{buttonText}</Button>
+            {singleButton ? <Button onPress={onButtonPress}>{buttonText}</Button> : null}
+            {multiButton ? (
+              <ButtonGroup direction={direction}
+                buttonOneText={buttonOneText}
+                buttonTwoText={buttonTwoText}
+                buttonOneProps={buttonOneProps}
+                buttonTwoProps={buttonTwoProps}
+                { ...buttonGroupProps}
+              />
+            ) : null}
           </View>
         </Tile>
       </View>
@@ -41,7 +57,9 @@ const Modal = ({
 }
 
 Modal.defaultProps = {
-  onButtonPress: () => { }
+  onButtonPress: () => { },
+  singleButton: true,
+  multiButton: false
 }
 
 export default Modal
