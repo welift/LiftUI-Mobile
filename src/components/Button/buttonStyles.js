@@ -28,8 +28,8 @@ const defaultText = {
 }
 
 const defaultContent = {
-  marginStart: 24,
-  marginEnd: 24
+  marginStart: 'auto',
+  marginEnd: 'auto'
 }
 
 const iconContent = {
