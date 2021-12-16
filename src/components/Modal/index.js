@@ -4,6 +4,7 @@ import { Modal as NativeModal, Text, View, Pressable } from "react-native";
 import Tile from '../Tile'
 import Icon from '../Icon'
 import Button from '../Button'
+import ButtonGroup from "../ButtonGroup";
 
 import types from '../../theme/type'
 
