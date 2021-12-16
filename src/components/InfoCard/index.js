@@ -11,7 +11,7 @@ const InfoCard = ({
   style,
   headerRightStyle,
   headerLeftStyle,
-  breakIsBold,
+  lineBreakStyle,
 }) => {
   const spreadChildren = children?.length > 0 ? children : [children]
 
@@ -21,7 +21,7 @@ const InfoCard = ({
         {child}
       </View>
       <View style={styles.line}>
-        {index !== spreadChildren.length - 1 && <Line lineType={breakIsBold ? 'bold' : 'break'} />}
+        {index !== spreadChildren.length - 1 && <Line lineType={lineBreakStyle} />}
       </View>
     </View>
   )
@@ -40,7 +40,7 @@ const InfoCard = ({
 }
 
 InfoCard.defaultProps = {
-  breakIsBold: true
+  lineBreakStyle: 'bold'
 }
 
 export default InfoCard
