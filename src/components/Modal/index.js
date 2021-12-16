@@ -23,6 +23,7 @@ const Modal = ({
   buttonOneProps,
   buttonTwoProps,
   buttonGroupProps,
+  direction,
   ...rest
 }) => {
   return (
