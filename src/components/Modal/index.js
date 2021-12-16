@@ -41,14 +41,16 @@ const Modal = ({
           {children}
           <View style={{ width: 'auto', marginHorizontal: 16 }}>
             {multiButton ? (
-              <ButtonGroup 
-                direction={direction}
-                buttonOneText={buttonOneText}
-                buttonTwoText={buttonTwoText}
-                buttonOneProps={buttonOneProps}
-                buttonTwoProps={buttonTwoProps}
-                { ...buttonGroupProps}
-              />
+              <View style={direction === 'horizontal' ? { width: 128, alignSelf: 'center' } : {}}>
+                <ButtonGroup 
+                  direction={direction}
+                  buttonOneText={buttonOneText}
+                  buttonTwoText={buttonTwoText}
+                  buttonOneProps={buttonOneProps}
+                  buttonTwoProps={buttonTwoProps}
+                  { ...buttonGroupProps}
+                />
+              </View>
             ) : <Button onPress={onButtonPress}>{buttonText}</Button>}
           </View>
         </Tile>
