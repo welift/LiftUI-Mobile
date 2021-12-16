@@ -4,6 +4,7 @@ import { Modal as NativeModal, Text, View, Pressable } from "react-native";
 import Tile from '../Tile'
 import Icon from '../Icon'
 import Button from '../Button'
+import ButtonGroup from "../ButtonGroup";
 
 import types from '../../theme/type'
 
@@ -16,6 +17,12 @@ const Modal = ({
   children,
   onButtonPress,
   buttonText,
+  multiButton,
+  buttonOneText,
+  buttonTwoText,
+  buttonOneProps,
+  buttonTwoProps,
+  buttonGroupProps,
   ...rest
 }) => {
   return (
@@ -32,7 +39,16 @@ const Modal = ({
           <Text style={[types.headingThree, styles.title]}>{title}</Text>
           {children}
           <View style={{ width: 'auto', marginHorizontal: 16 }}>
-            <Button onPress={onButtonPress}>{buttonText}</Button>
+            {multiButton ? (
+              <ButtonGroup 
+                direction={direction}
+                buttonOneText={buttonOneText}
+                buttonTwoText={buttonTwoText}
+                buttonOneProps={buttonOneProps}
+                buttonTwoProps={buttonTwoProps}
+                { ...buttonGroupProps}
+              />
+            ) : <Button onPress={onButtonPress}>{buttonText}</Button>}
           </View>
         </Tile>
       </View>
@@ -41,7 +57,8 @@ const Modal = ({
 }
 
 Modal.defaultProps = {
-  onButtonPress: () => { }
+  onButtonPress: () => { },
+  multiButton: false
 }
 
 export default Modal
