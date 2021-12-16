@@ -4,7 +4,15 @@ import { styles } from './infoCardStyles'
 import Tile from '../Tile'
 import Line from '../Line'
 
-const InfoCard = ({ children, headerLeft, headerRight, style, headerRightStyle, headerLeftStyle }) => {
+const InfoCard = ({
+  children,
+  headerLeft,
+  headerRight,
+  style,
+  headerRightStyle,
+  headerLeftStyle,
+  breakIsBold,
+}) => {
   const spreadChildren = children?.length > 0 ? children : [children]
 
   const renderChild = (child, index) => (
@@ -13,7 +21,7 @@ const InfoCard = ({ children, headerLeft, headerRight, style, headerRightStyle, 
         {child}
       </View>
       <View style={styles.line}>
-        {index !== spreadChildren.length - 1 && <Line lineType='bold' />}
+        {index !== spreadChildren.length - 1 && <Line lineType={breakIsBold ? 'bold' : 'break'} />}
       </View>
     </View>
   )
@@ -29,6 +37,10 @@ const InfoCard = ({ children, headerLeft, headerRight, style, headerRightStyle, 
       {renderChildren}
     </Tile>
   )
+}
+
+InfoCard.defaultProps = {
+  breakIsBold: true
 }
 
 export default InfoCard
