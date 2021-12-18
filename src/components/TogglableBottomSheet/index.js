@@ -66,8 +66,8 @@ const TogglableBottomSheet = ({
         <Icon name='upArrow' />
       </View>
       <View style={styles.toggleContent}>
-        {contentRight}
         {contentLeft}
+        {contentRight}
       </View>
     </>
   )
