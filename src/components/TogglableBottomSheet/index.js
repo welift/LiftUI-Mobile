@@ -34,7 +34,7 @@ const TogglableBottomSheet = ({
   const onOpen = () => {
     setShowFullSheet(true)
     Animated.timing(animatedHeight, {
-      toValue: 288,
+      toValue: 242,
       duration: 200,
       useNativeDriver: false
     }).start()
@@ -42,22 +42,24 @@ const TogglableBottomSheet = ({
 
 
   const bottomSheet = (
-    <>
+    <View style={{ justifyContent: 'space-between', height: '100%'}}>
       <Pressable onPress={onClose}>
         <View style={styles.topRow}>
           <Icon name='downArrow' />
         </View>
       </Pressable>
-      <View style={[styles.topRow, { paddingTop: 36, paddingBottom: 18 }]}>
-        <Text style={types.headingThree}>{title}</Text>
-      </View>
+      {title ? (
+        <View style={[styles.topRow, { paddingTop: 36, paddingBottom: 18 }]}>
+          <Text style={types.headingThree}>{title}</Text>
+        </View>
+      ) : null}
       <View style={styles.content}>
         {children}
       </View>
       <View style={{ width: 'auto' }}>
         <Button {...buttonProps} onPress={onButtonPress}>{buttonText}</Button>
       </View>
-    </>
+    </View>
   )
 
   const bottomTab = (
