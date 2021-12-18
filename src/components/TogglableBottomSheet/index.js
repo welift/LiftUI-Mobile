@@ -48,9 +48,11 @@ const TogglableBottomSheet = ({
           <Icon name='downArrow' />
         </View>
       </Pressable>
-      <View style={[styles.topRow, { paddingTop: 36, paddingBottom: 18 }]}>
-        <Text style={types.headingThree}>{title}</Text>
-      </View>
+      {title ? (
+        <View style={[styles.topRow, { paddingTop: 36, paddingBottom: 18 }]}>
+          <Text style={types.headingThree}>{title}</Text>
+        </View>
+      ) : null}
       <View style={styles.content}>
         {children}
       </View>
