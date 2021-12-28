@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react"
-import { View, Text, TextInput, TouchableWithoutFeedback, Pressable, FlatList } from "react-native"
+import { View, Text, TextInput, TouchableWithoutFeedback, Pressable, FlatList, Platform } from "react-native"
 import { styles } from './dropdownStyles'
 import PropTypes from 'prop-types'
 import Icon from '../Icon'
@@ -34,6 +34,18 @@ const Dropdown = ({
   const [filterdOptions, setFilteredOptions] = useState(options)
   const [selectedValue, setSelectedValue] = useState(selected)
   const [open, setIsOpen] = useState(false)
+  const [selection, setSelection] = useState(null)
+
+  const handleSelectionBlur = () => {
+    console.log('ajksdf')
+    if(Platform.OS === 'ios') return
+    setSelection({ start: 0 })
+  }
+
+  const handleSelectionFocus = () => {
+    if(Platform.OS === 'ios') return
+    setSelection({ start: value.length })
+  }
 
   const handleChange = (e) => {
     setValue(e.nativeEvent.text)
@@ -43,11 +55,13 @@ const Dropdown = ({
     const filteredObject = options?.filter((val) => regex.test(val.label))
     setFilteredOptions(filteredObject)
     onChange(e, e.nativeEvent.text, name)
+    setSelection(null)
   }
 
   const handleFocus = () => {
     setIsOpen(true)
     setIsFocused(true)
+    handleSelectionFocus()
   }
 
   const handleInputClick = (e) => {
@@ -56,6 +70,11 @@ const Dropdown = ({
       inputRef.current.focus()
       setIsFocused(!isFocused)
       setIsOpen(!open)
+      if(open) {
+        handleSelectionBlur()
+      } else {
+        handleSelectionFocus()
+      }
     }
   }
 
@@ -63,6 +82,7 @@ const Dropdown = ({
     setIsFocused(false)
     setTouched(true)
     setIsOpen(false)
+    handleSelectionBlur()
   }
 
   const handleOptionClick = (item) => {
@@ -79,6 +99,7 @@ const Dropdown = ({
       onChange({ target: { name: name, value: item.value } }, item.value, name)
     }
     inputRef.current.blur()
+    handleSelectionBlur()
     setIsOpen(false)
     onOptionClick(item, item.value, name)
   }
@@ -125,6 +146,8 @@ const Dropdown = ({
   const inputRef = textInputRef ? textInputRef : useRef(null)
   const hasError = error?.length > 0 && isTouched
 
+  console.log(selection)
+
   return (
     <View style={style}>
       <View
@@ -160,6 +183,7 @@ const Dropdown = ({
                 maxLength={maxLength}
                 value={value}
                 placeholderTextColor={styles.input(disabled, hasError, width).color}
+                selection={selection}
                 {...rest}
               />
             </View>
