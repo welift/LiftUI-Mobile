@@ -37,7 +37,6 @@ const Dropdown = ({
   const [selection, setSelection] = useState(null)
 
   const handleSelectionBlur = () => {
-    console.log('ajksdf')
     if(Platform.OS === 'ios') return
     setSelection({ start: 0 })
   }
@@ -145,8 +144,6 @@ const Dropdown = ({
 
   const inputRef = textInputRef ? textInputRef : useRef(null)
   const hasError = error?.length > 0 && isTouched
-
-  console.log(selection)
 
   return (
     <View style={style}>
