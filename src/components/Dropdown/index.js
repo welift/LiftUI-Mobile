@@ -43,7 +43,7 @@ const Dropdown = ({
 
   const handleSelectionFocus = () => {
     if(Platform.OS === 'ios') return
-    setSelection({ start: value.length })
+    setSelection({ start: value?.length })
   }
 
   const handleChange = (e) => {
