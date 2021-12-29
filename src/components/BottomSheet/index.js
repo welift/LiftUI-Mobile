@@ -14,6 +14,8 @@ const BottomSheet = ({
   children,
   onButtonPress,
   buttonText,
+  buttonOneClose,
+  buttonTwoClose,
   buttonOneProps,
   buttonTwoProps,
   buttonOneText,
@@ -32,11 +34,12 @@ const BottomSheet = ({
     if(visible) {
       Animated.timing(animatedBackgroundOpacity, {
         toValue: 1,
-        duration: 850,
+        delay: 250,
+        duration: 300,
         useNativeDriver: false
       }).start()
     }
-  }, [])
+  })
 
   const handleClose = () => {
     Animated.timing(animatedBackgroundOpacity, {
@@ -45,6 +48,20 @@ const BottomSheet = ({
       useNativeDriver: false
     }).start()
     setTimeout(() => onClose(), 50)
+  }
+
+  const handleButtonOne = () => {
+    buttonOneProps?.onPress()
+    if(buttonOneClose) {
+      handleClose()
+    }
+  }
+
+  const handleButtonTwo = () => {
+    buttonTwoProps?.onPress()
+    if(buttonTwoClose) {
+      handleClose()
+    }
   }
 
   const usableBackground = (visible && darkenBackground) ? backgroundColor : ''
@@ -69,11 +86,13 @@ const BottomSheet = ({
                 direction='vertical'
                 buttonOneProps={{
                   buttonType: 'primaryDefault',
-                  ...buttonOneProps
+                  ...buttonOneProps,
+                  onPress: handleButtonOne
                 }}
                 buttonTwoProps={{
                   buttonType: 'primaryOutline',
-                  ...buttonTwoProps
+                  ...buttonTwoProps,
+                  onPress: handleButtonTwo
                 }}
                 buttonOneText={buttonOneText}
                 buttonTwoText={buttonTwoText}
@@ -89,6 +108,12 @@ const BottomSheet = ({
 BottomSheet.defaultProps = {
   onButtonPress: () => { },
   darkenBackground: false,
+  buttonOneProps: {
+    onPress: () => {}
+  },
+  buttonTwoProps: {
+    onPress: () => {}
+  }
 }
 
 export default BottomSheet

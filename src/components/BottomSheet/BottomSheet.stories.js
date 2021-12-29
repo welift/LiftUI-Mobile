@@ -23,8 +23,39 @@ const StoryBottomSheet = () => {
   )
 }
 
+const DarkenedBottomSheet = () => {
+  const [showBottomSheet, setShowBottomSheet] = useState(false)
+  return (
+    <View>
+      {showBottomSheet && (<BottomSheet
+        visible={showBottomSheet}
+        onClose={() => setShowBottomSheet(false)}
+        title='Accept Lift?'
+        buttonOneText='Accept'
+        buttonTwoText='Decline'
+        buttonOneClose
+        buttonTwoClose
+        darkenBackground
+      >
+        <View>
+          <Text>This is the content of the bottom sheet</Text>
+        </View>
+      </BottomSheet>)}
+      <Button onPress={() => setShowBottomSheet(true)}>Open BottomSheet</Button>
+    </View>
+  )
+}
+
 storiesOf('BottomSheet', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
-  .add('default botomSheet', () => (
+  .add('default bottomSheet', () => (
     <StoryBottomSheet />
   ))
+
+storiesOf('BottomSheet', module)
+  .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
+  .add('darkened bottomSheet', () => (
+    <DarkenedBottomSheet />
+  ))
+
+
