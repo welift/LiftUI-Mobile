@@ -17,27 +17,65 @@ const TogglableBottomSheet = ({
   buttonText,
   contentRight,
   contentLeft,
+  darkenBackground,
   ...rest
 }) => {
   const [showFullSheet, setShowFullSheet] = useState(false)
 
   const animatedHeight = useRef(new Animated.Value(76)).current
 
+  const animatedBackgroundOpacity = useRef(new Animated.Value(0)).current
+
+  const backgroundColor = animatedBackgroundOpacity.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, .25)']
+  })
+
   const onClose = () => {
     setShowFullSheet(false)
-    Animated.timing(animatedHeight, {
-      toValue: 76,
-      duration: 100,
-      useNativeDriver: false
-    }).start()
+    if(darkenBackground) {
+      Animated.parallel([
+        Animated.timing(animatedBackgroundOpacity, {
+          toValue: 0,
+          duration: 99,
+          useNativeDriver: false
+        }),
+        Animated.timing(animatedHeight, {
+          toValue: 76,
+          duration: 100,
+          useNativeDriver: false
+        })
+      ]).start()
+    } else {
+      Animated.timing(animatedHeight, {
+        toValue: 76,
+        duration: 100,
+        useNativeDriver: false
+      }).start()
+    }
   }
   const onOpen = () => {
     setShowFullSheet(true)
-    Animated.timing(animatedHeight, {
-      toValue: 242,
-      duration: 200,
-      useNativeDriver: false
-    }).start()
+    if(darkenBackground) {
+      Animated.parallel([
+        Animated.timing(animatedBackgroundOpacity, {
+          toValue: 1,
+          duration: 250,
+          useNativeDriver: false
+        }),
+        Animated.timing(animatedHeight, {
+          toValue: 242,
+          duration: 200,
+          useNativeDriver: false
+        })
+      ]).start()
+    } else {
+      Animated.timing(animatedHeight, {
+        toValue: 242,
+        duration: 200,
+        useNativeDriver: false
+      }).start()
+    }
   }
 
 
@@ -79,7 +117,7 @@ const TogglableBottomSheet = ({
   return (
     <>
       <TouchableWithoutFeedback onPress={showFullSheet ? onClose : () => { }}>
-        <View style={styles.innerCenter}>
+        <Animated.View style={styles.innerCenter(backgroundColor)}>
           <Pressable onPress={!showFullSheet ? onOpen : () => { }}>
             <AnimatedTile height={animatedHeight} width='100%' style={currentStyles}>
               <>
@@ -88,7 +126,7 @@ const TogglableBottomSheet = ({
               </>
             </AnimatedTile>
           </Pressable>
-        </View>
+        </Animated.View>
       </TouchableWithoutFeedback>
     </>
   )
@@ -96,6 +134,7 @@ const TogglableBottomSheet = ({
 
 TogglableBottomSheet.defaultProps = {
   onButtonPress: () => { },
+  darkenBackground: false
 }
 
 export default TogglableBottomSheet

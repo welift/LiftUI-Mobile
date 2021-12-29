@@ -1,14 +1,15 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  innerCenter: {
+  innerCenter: backgroundColor => ({
     flex: 1,
     display: 'flex',
     justifyContent: "flex-end",
     alignItems: "center",
     zIndex: 1000,
     elevation: 1000,
-  },
+    backgroundColor: backgroundColor
+  }),
   tile: {
     paddingTop: 8,
     paddingBottom: 0,
