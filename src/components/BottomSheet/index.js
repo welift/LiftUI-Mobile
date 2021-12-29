@@ -1,8 +1,7 @@
-import React from "react";
-
-import { Modal as NativeModal, Text, View, TouchableWithoutFeedback } from "react-native";
+import React, { useRef, useEffect } from "react"
+import { Modal as NativeModal, Animated, Text, View, TouchableWithoutFeedback } from "react-native"
 import Tile from '../Tile'
-import ButtonGroup from "../ButtonGroup";
+import ButtonGroup from "../ButtonGroup"
 
 import types from '../../theme/type'
 
@@ -19,18 +18,47 @@ const BottomSheet = ({
   buttonTwoProps,
   buttonOneText,
   buttonTwoText,
+  darkenBackground,
   ...rest
 }) => {
+  const animatedBackgroundOpacity = useRef(new Animated.Value(0)).current
+
+  const backgroundColor = animatedBackgroundOpacity.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, .25)']
+  })
+
+  useEffect(() => {
+    if(visible) {
+      Animated.timing(animatedBackgroundOpacity, {
+        toValue: 1,
+        duration: 850,
+        useNativeDriver: false
+      }).start()
+    }
+  }, [])
+
+  const handleClose = () => {
+    Animated.timing(animatedBackgroundOpacity, {
+      toValue: 0,
+      duration: 49,
+      useNativeDriver: false
+    }).start()
+    setTimeout(() => onClose(), 50)
+  }
+
+  const usableBackground = (visible && darkenBackground) ? backgroundColor : ''
+  
   return (
     <NativeModal
       animationType='slide'
       transparent={true}
       visible={visible}
-      onRequestClose={onClose}
+      onRequestClose={handleClose}
       {...rest}
     >
-      <TouchableWithoutFeedback onPress={onClose}>
-        <View style={styles.innerCenter}>
+      <TouchableWithoutFeedback onPress={handleClose}>
+        <Animated.View style={styles.innerCenter(usableBackground)}>
           <Tile style={styles.tile}>
             <Text style={types.headingFour}>{title}</Text>
             <View style={styles.content}>
@@ -52,7 +80,7 @@ const BottomSheet = ({
               />
             </View>
           </Tile>
-        </View>
+        </Animated.View>
       </TouchableWithoutFeedback>
     </NativeModal>
   )
@@ -60,6 +88,7 @@ const BottomSheet = ({
 
 BottomSheet.defaultProps = {
   onButtonPress: () => { },
+  darkenBackground: false,
 }
 
 export default BottomSheet
