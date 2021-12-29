@@ -34,3 +34,20 @@ storiesOf('TogglableBottomSheet', module)
       <Text>content</Text>
     </TogglableBottomSheet>
   ))
+
+  storiesOf('TogglableBottomSheet', module)
+  .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
+  .add('Bottom sheet darkened background ', () => (
+    <TogglableBottomSheet
+      contentRight={
+        <Text style={types.smallBody}>Hi</Text>
+      }
+      contentLeft={
+        <Text style={types.smallBody}>Hello</Text>
+      }
+      buttonText='Button'
+      darkenBackground
+    >
+      <Text>content</Text>
+    </TogglableBottomSheet>
+  ))
