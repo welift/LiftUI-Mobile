@@ -16,7 +16,8 @@ const defaultArea = {
 const buttonFont = {
   fontSize: 16,
   lineHeight: 16,
-  fontWeight: '700'
+  fontWeight: '700',
+  letterSpacing: .3
 }
 
 const defaultText = {
@@ -24,7 +25,7 @@ const defaultText = {
   alignItems: 'center',
   justifyContent: 'center',
   paddingTop: 2,
-  color: colors.neutral
+  color: colors.neutral,
 }
 
 const defaultContent = {
