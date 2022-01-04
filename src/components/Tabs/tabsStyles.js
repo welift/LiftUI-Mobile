@@ -36,10 +36,11 @@ export const styles = {
   tabText: selected => ({
     fontSize: 16,
     lineHeight: 16,
-    fontWeight: '500',
+    fontWeight: selected ? '500' : '300',
     paddingTop: 16,
     paddingBottom: 16,
-    color: selected ? colors.basic : colors.basicSoft
+    color: selected ? colors.basic : colors.basicSoft,
+    letterSpacing: .3
   }),
   selected: (tabWidth, marginCalc) => ({
     position: 'relative',

@@ -17,7 +17,8 @@ export const styles = {
     fontSize: 14,
     lineHeight: 14,
     color: colors.secondary,
-    fontWeight: '700'
+    fontWeight: '700',
+    letterSpacing: .3
   },
   content: {
     paddingTop: 12,

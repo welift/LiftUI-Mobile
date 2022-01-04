@@ -3,15 +3,15 @@ import colors from "../color"
 const fonts = {
   regular: {
     fontFamily: 'Inter-Light',
-    letterSpacing: .03,
+    letterSpacing: .3,
   },
   medium: {
     fontFamily: 'Inter-Medium',
-    letterSpacing: .03,
+    letterSpacing: .3,
   },
   bold: {
     fontFamily: 'Inter-Bold',
-    letterSpacing: .03,
+    letterSpacing: .3,
   }
 }
 
