@@ -28,6 +28,7 @@ import Time from "./Time";
 import Truck from "./Truck";
 import UpArrow from "./UpArrow";
 import User from "./User";
+import WeliftBox from './WeliftBox';
 
 // When adding more icons from an svg use this website
 // to format the svg properly
@@ -62,4 +63,5 @@ export default icons = (props) => ({
   truck: <Truck {...props} />,
   upArrow: <UpArrow {...props} />,
   user: <User {...props} />,
+  weliftBox: <WeliftBox {...props} />
 })
