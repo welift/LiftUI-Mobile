@@ -36,6 +36,7 @@ storiesOf('Icon', module)
       <Icon name='truck' />
       <Icon name='upArrow' />
       <Icon name='user' />
+      <Icon name='weliftBox' />
     </View>
   ))
 
@@ -69,6 +70,6 @@ storiesOf('Icon', module)
       <Icon name='truck' fill={colors.primary} />
       <Icon name='upArrow' fill={colors.primary} />
       <Icon name='user' fill={colors.primary} />
+      <Icon name='weliftBox' fill={colors.primary} />
     </View>
-
   ))
