@@ -27,7 +27,6 @@ const Tabs = ({ options, children }) => {
     }).start()   
   }
 
-
   const renderTab = (tab, index) => (
     <Pressable key={tab} onPress={() => handleSetSelected(tab, index)}>
       <View style={styles.tab(minTabWidth)}>
@@ -45,7 +44,7 @@ const Tabs = ({ options, children }) => {
         <Animated.View style={styles.selected(minTabWidth, animatedMargin)} />
       </View>
       <View style={{ height: '100%', zIndex: -1 }}>
-        {children?.[selectionIndex]}
+        {options?.length > 1 ? children?.[selectionIndex] : children}
       </View>
     </View>
   )
