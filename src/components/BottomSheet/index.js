@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react"
 import { Modal as NativeModal, Animated, Text, View, TouchableWithoutFeedback } from "react-native"
 import Tile from '../Tile'
+import Button from "../Button"
 import ButtonGroup from "../ButtonGroup"
 
 import types from '../../theme/type'
@@ -14,6 +15,7 @@ const BottomSheet = ({
   children,
   onButtonPress,
   buttonText,
+  buttonProps,
   buttonOneClose,
   buttonTwoClose,
   buttonOneProps,
@@ -65,6 +67,9 @@ const BottomSheet = ({
   }
 
   const usableBackground = (visible && darkenBackground) ? backgroundColor : ''
+
+  const showButtonGroup = buttonOneText && buttonTwoText && !buttonText
+  const showSingleButton = !buttonOneText && !buttonTwoText && buttonText
   
   return (
     <NativeModal
@@ -82,21 +87,26 @@ const BottomSheet = ({
               {children}
             </View>
             <View style={{ width: 'auto' }}>
-              <ButtonGroup
-                direction='vertical'
-                buttonOneProps={{
-                  buttonType: 'primaryDefault',
-                  ...buttonOneProps,
-                  onPress: handleButtonOne
-                }}
-                buttonTwoProps={{
-                  buttonType: 'primaryOutline',
-                  ...buttonTwoProps,
-                  onPress: handleButtonTwo
-                }}
-                buttonOneText={buttonOneText}
-                buttonTwoText={buttonTwoText}
-              />
+              {showButtonGroup ? (
+                <ButtonGroup
+                  direction='vertical'
+                  buttonOneProps={{
+                    buttonType: 'primaryDefault',
+                    ...buttonOneProps,
+                    onPress: handleButtonOne
+                  }}
+                  buttonTwoProps={{
+                    buttonType: 'primaryOutline',
+                    ...buttonTwoProps,
+                    onPress: handleButtonTwo
+                  }}
+                  buttonOneText={buttonOneText}
+                  buttonTwoText={buttonTwoText}
+                />
+              ) : null}
+              {showSingleButton ? (
+                <Button {...buttonProps} onPress={onButtonPress}>{buttonText}</Button>
+              ) : null}
             </View>
           </Tile>
         </Animated.View>
