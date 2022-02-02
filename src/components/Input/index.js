@@ -22,6 +22,7 @@ const Input = ({
   formatter,
   marginBottom,
   textInputRef,
+  textInputStyle,
   ...rest
 }) => {
   const [value, setValue] = useState(defaultValue)
@@ -74,7 +75,7 @@ const Input = ({
               }
               <TextInput
                 ref={inputRef}
-                style={styles.input(disabled, hasError, width, iconName, label)}
+                style={[styles.input(disabled, hasError, width, iconName, label), textInputStyle]}
                 name={name}
                 onPressIn={handleInputClick}
                 onFocus={handleInputClick}
@@ -119,7 +120,8 @@ Input.defaultProps = {
   disabled: false,
   width: '100%',
   touched: false,
-  marginBottom: 24
+  marginBottom: 24,
+  textInputStyle: {}
 }
 
 Input.propTypes = {
