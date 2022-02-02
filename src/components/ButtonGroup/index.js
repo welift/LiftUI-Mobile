@@ -15,9 +15,11 @@ const ButtonGroup = ({
   const buttonTwoCustomStyle = direction === 'horizontal' ? styles.horizontalButtonTwo : styles.verticalButtonTwo
 
   return (
-    <View style={styles[direction]}>
-      <Button customStyle={buttonOneCustomStyle} {...buttonOneProps} >{buttonOneText}</Button>
-      <Button customStyle={buttonTwoCustomStyle} {...buttonTwoProps} >{buttonTwoText}</Button>
+    <View style={{ flex: 1, justifyContent: 'center' }}>
+      <View style={styles[direction]}>
+        <Button customStyle={buttonOneCustomStyle} {...buttonOneProps} >{buttonOneText}</Button>
+        <Button customStyle={buttonTwoCustomStyle} {...buttonTwoProps} >{buttonTwoText}</Button>
+      </View>
     </View>
   )
 }

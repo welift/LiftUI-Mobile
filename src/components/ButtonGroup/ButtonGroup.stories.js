@@ -6,7 +6,7 @@ import { ButtonGroup, CenterView } from '../../../src'
 storiesOf('ButtonGroup', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('Vertical', () => (
-    <View style={{ width: 'auto' }}>
+    <View style={{ width: 200 }}>
       <ButtonGroup
         direction='vertical'
         buttonOneText='Cancel'
@@ -19,7 +19,7 @@ storiesOf('ButtonGroup', module)
 
   ))
   .add('Horizontal', () => (
-    <View style={{ width: 150 }}>
+    <View style={{ width: 350 }}>
       <ButtonGroup
         direction='horizontal'
         buttonOneText='Cancel'
@@ -29,5 +29,5 @@ storiesOf('ButtonGroup', module)
         }}
       />
     </View>
-
+    
   ))
