@@ -2,6 +2,7 @@ import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import { View } from 'react-native';
 import { Input, CenterView } from '../../../src';
+import { formatCurrency } from '../../validation/currencyFormatter';
 
 storiesOf('Input', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
@@ -34,4 +35,8 @@ storiesOf('Input', module)
 
   .add('All with Error', () => (
     <Input label='label' hint='hint' placeholder='Placeholder' error="error" touched />
+  ))
+
+  .add('Default with currency formatter', () => (
+    <Input formatter={formatCurrency} label='test' />
   ))
