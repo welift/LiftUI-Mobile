@@ -24,6 +24,7 @@ storiesOf('Icon', module)
       <Icon name='home' />
       <Icon name='leftArrow' />
       <Icon name='lifter' />
+      <Icon name='lightbulb' />
       <Icon name='loading' />
       <Icon name='location' />
       <Icon name='logout' />
@@ -58,6 +59,7 @@ storiesOf('Icon', module)
       <Icon name='home' fill={colors.primary} />
       <Icon name='leftArrow' fill={colors.primary} />
       <Icon name='lifter' fill={colors.primary} />
+      <Icon name='lightbulb' fill={colors.primary} />
       <Icon name='loading' fill={colors.primary} />
       <Icon name='location' fill={colors.primary} />
       <Icon name='logout' fill={colors.primary} />
