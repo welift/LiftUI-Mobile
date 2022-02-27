@@ -13,6 +13,16 @@ const StoryModal = () => {
   )
 }
 
+const StoryModalNoButton = () => {
+  const [showModal, setShowModal] = useState(false)
+  return (
+    <View>
+      {showModal && <Modal visible={showModal} showButton={false} onClose={() => setShowModal(false)} title='Accept Lift?' buttonText='Accept' />}
+      <Button onPress={() => setShowModal(true)}>Open Modal</Button>
+    </View>
+  )
+}
+
 const StoryButtonGroupModal = () => {
   const [showModal, setShowModal] = useState(false)
   return (
@@ -41,12 +51,18 @@ storiesOf('Modal', module)
 
 storiesOf('Modal', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
+  .add('Modal no button', () => (
+    <StoryModalNoButton />
+  ))
+
+storiesOf('Modal', module)
+  .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('ButtonGroup Modal', () => (
     <StoryButtonGroupModal />
-))
+  ))
 
 storiesOf('Modal', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('ButtonGroup Modal Vertical', () => (
     <StoryButtonGroupModalVert />
-))
+  ))
