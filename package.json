@@ -1,6 +1,6 @@
 {
   "name": "@welift/liftui-mobile",
-  "version": "1.0.58",
+  "version": "1.0.59",
   "main": "dist/module/index.js",
   "module": "dist/module/index.js",
   "scripts": {
