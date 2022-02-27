@@ -16,6 +16,7 @@ import Happy from "./Happy";
 import Home from "./Home";
 import LeftArrow from "./LeftArrow";
 import Lifter from "./Lifter";
+import Lightbulb from './Lightbulb';
 import Loading from "./Loading";
 import Location from "./Location";
 import Logout from "./Logout";
@@ -51,6 +52,7 @@ export default icons = (props) => ({
   home: <Home {...props} />,
   leftArrow: <LeftArrow {...props} />,
   lifter: <Lifter {...props} />,
+  lightbulb: <Lightbulb {...props} />,
   loading: <Loading {...props} />,
   location: <Location {...props} />,
   logout: <Logout {...props} />,
