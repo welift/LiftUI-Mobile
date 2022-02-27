@@ -7,7 +7,7 @@ const baseBorder = (label) => ({
   borderRadius: 10,
   borderColor: colors.secondaryLight,
   height: label ? 60 : 48,
-  minWidth: 200,
+  minWidth: 100,
   width: '100%',
   paddingTop: Platform.OS === 'android' ? 8 : 12,
   paddingLeft: 16,
