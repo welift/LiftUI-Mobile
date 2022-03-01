@@ -42,7 +42,7 @@ const Modal = ({
           {children}
           <View style={{ width: 'auto', marginHorizontal: 16 }}>
             {showButton && multiButton ? (
-              <View style={direction === 'horizontal' ? { width: 128, alignSelf: 'center' } : {}}>
+              <View style={direction === 'horizontal' ? { width: 256, alignSelf: 'center' } : {}}>
                 <ButtonGroup
                   direction={direction}
                   buttonOneText={buttonOneText}
